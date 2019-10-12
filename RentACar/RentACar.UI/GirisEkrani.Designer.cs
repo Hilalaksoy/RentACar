@@ -36,20 +36,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGirisYap = new System.Windows.Forms.Button();
-            this.txtSifre = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSifre = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtSifre);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.lnkKayit);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnGirisYap);
-            this.panel1.Controls.Add(this.txtSifre);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(293, 141);
@@ -125,19 +125,19 @@
             this.btnGirisYap.UseVisualStyleBackColor = false;
             this.btnGirisYap.Click += new System.EventHandler(this.btnGirisYap_Click);
             // 
-            // txtSifre
-            // 
-            this.txtSifre.Location = new System.Drawing.Point(136, 194);
-            this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(195, 29);
-            this.txtSifre.TabIndex = 0;
-            // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(136, 139);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(195, 29);
             this.txtEmail.TabIndex = 0;
+            // 
+            // txtSifre
+            // 
+            this.txtSifre.Location = new System.Drawing.Point(136, 193);
+            this.txtSifre.Name = "txtSifre";
+            this.txtSifre.Size = new System.Drawing.Size(195, 29);
+            this.txtSifre.TabIndex = 6;
             // 
             // GirisEkrani
             // 
@@ -165,11 +165,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGirisYap;
-        private System.Windows.Forms.TextBox txtSifre;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel lnkKayit;
+        private System.Windows.Forms.MaskedTextBox txtSifre;
     }
 }
 

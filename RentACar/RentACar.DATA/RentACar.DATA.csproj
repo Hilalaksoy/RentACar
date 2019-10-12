@@ -45,6 +45,7 @@
     <Compile Include="Kiralama.cs" />
     <Compile Include="Musteri.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resim.cs" />
     <Compile Include="Uye.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

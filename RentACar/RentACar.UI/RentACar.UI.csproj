@@ -62,6 +62,12 @@
     <Compile Include="Anasayfa.Designer.cs">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArabaIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArabaIslemleri.Designer.cs">
+      <DependentUpon>ArabaIslemleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="GirisEkrani.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Anasayfa.resx">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArabaIslemleri.resx">
+      <DependentUpon>ArabaIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GirisEkrani.resx">
       <DependentUpon>GirisEkrani.cs</DependentUpon>
     </EmbeddedResource>

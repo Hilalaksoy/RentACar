@@ -11,6 +11,7 @@ namespace RentACar.DATA
         public int UyeID { get; set; }
         public string Email { get; set; }
         public string Sifre { get; set; }
+        public bool AdminMi { get; set; }
 
         public virtual Musteri Musteri { get; set; } //Bire- Bir
     }

@@ -19,7 +19,7 @@ namespace RentACar.DAL
             Property(x => x.Soyad).HasMaxLength(20).IsRequired();
             Property(x => x.DogumTarihi).HasColumnType("datetime2");
             Property(x => x.Memleket).HasMaxLength(20).IsOptional();
-            Property(x => x.NufusResim).IsRequired();
+            Property(x => x.NufusResim).HasColumnType("image").IsRequired();
 
 
 

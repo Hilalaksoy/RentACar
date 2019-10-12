@@ -19,6 +19,7 @@ namespace RentACar.DAL
         public DbSet<Musteri> Musteriler { get; set; }
         public DbSet<Araba> Arabalar { get; set; }
         public DbSet<Kiralama> Kiralamalar { get; set; }
+        public DbSet<Resim> Resimler { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -26,6 +27,7 @@ namespace RentACar.DAL
             modelBuilder.Configurations.Add(new MusteriMapping());
             modelBuilder.Configurations.Add(new ArabaMapping());
             modelBuilder.Configurations.Add(new KiralamaMapping());
+            modelBuilder.Configurations.Add(new ResimMapping());
 
             base.OnModelCreating(modelBuilder);
         }

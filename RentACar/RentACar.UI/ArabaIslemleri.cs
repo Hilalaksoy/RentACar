@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace RentACar.UI
 {
-    public partial class Anasayfa : Form
+    public partial class ArabaIslemleri : Form
     {
         Context db;
-        public Anasayfa(Context context)
+        GirisEkrani girisEkrani;
+        public ArabaIslemleri(GirisEkrani giris,Context context)
         {
-
+            girisEkrani = giris;
             db = context;
             InitializeComponent();
         }
-        
     }
 }

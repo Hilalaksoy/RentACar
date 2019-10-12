@@ -16,6 +16,7 @@ namespace RentACar.DAL
             HasKey(x => x.UyeID);
             Property(x => x.Email).HasMaxLength(50).IsRequired();
             Property(x => x.Sifre).HasMaxLength(15).IsRequired();
+            Property(x => x.AdminMi).HasColumnType("bit");
 
 
             HasRequired(x => x.Musteri).WithRequiredPrincipal(x => x.Uye); //Bire- bir

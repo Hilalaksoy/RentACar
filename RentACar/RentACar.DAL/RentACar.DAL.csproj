@@ -57,6 +57,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MusteriMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResimMapping.cs" />
     <Compile Include="UyeMapping.cs" />
   </ItemGroup>
   <ItemGroup>

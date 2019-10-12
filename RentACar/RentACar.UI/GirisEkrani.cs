@@ -36,12 +36,20 @@ namespace RentACar.UI
             {
                 MessageBox.Show("Üyeliğiniz bulunamadı. Lütfen kayıt olunuz.");
             }
-
             else
             {
-                Anasayfa anasayfa = new Anasayfa(db);
-                this.Hide();
-                anasayfa.Show();
+                if (uye.AdminMi == true)
+                {
+                    ArabaIslemleri arabaIslemleri = new ArabaIslemleri(this,db);
+                    this.Hide();
+                    arabaIslemleri.Show();
+                }
+                else
+                {
+                    Anasayfa anasayfa = new Anasayfa(db);
+                    this.Hide();
+                    anasayfa.Show();
+                }
             }
         }
 
