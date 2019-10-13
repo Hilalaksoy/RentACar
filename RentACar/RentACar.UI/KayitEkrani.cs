@@ -41,7 +41,6 @@ namespace RentACar.UI
                 girisEkrani.Show();
                 this.Close();
             }
-
             else
             {
                 MessageBox.Show("Bu E-Mail daha önceden alınmış! Lütfen başka bir E-Mail deneyiniz.");

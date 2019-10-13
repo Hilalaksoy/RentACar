@@ -29,14 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArabaIslemleri));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnGuncellemeYap = new System.Windows.Forms.Button();
-            this.cmbArabaListesi = new System.Windows.Forms.ComboBox();
-            this.btnSil = new System.Windows.Forms.Button();
+            this.pnlArabaIslem = new System.Windows.Forms.Panel();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnArabaEkle = new System.Windows.Forms.Button();
-            this.pbResimEkle = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.rdoHayir = new System.Windows.Forms.RadioButton();
             this.rdoEvet = new System.Windows.Forms.RadioButton();
@@ -53,75 +48,57 @@
             this.txtModel = new System.Windows.Forms.TextBox();
             this.txtSasiNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.btnGuncellemeYap = new System.Windows.Forms.Button();
+            this.cmbArabaListesi = new System.Windows.Forms.ComboBox();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.pnlResimIslem = new System.Windows.Forms.Panel();
+            this.pbResimEkle = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pbAraba1 = new System.Windows.Forms.PictureBox();
+            this.pbAraba3 = new System.Windows.Forms.PictureBox();
+            this.pbAraba2 = new System.Windows.Forms.PictureBox();
+            this.pbAraba4 = new System.Windows.Forms.PictureBox();
+            this.pbAraba5 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pbResimKaydet = new System.Windows.Forms.PictureBox();
+            this.pnlArabaIslem.SuspendLayout();
+            this.pnlResimIslem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbResimEkle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAraba1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAraba3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAraba2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAraba4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAraba5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbResimKaydet)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlArabaIslem
             // 
-            this.panel1.Controls.Add(this.btnGuncelle);
-            this.panel1.Controls.Add(this.btnArabaEkle);
-            this.panel1.Controls.Add(this.pbResimEkle);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.rdoHayir);
-            this.panel1.Controls.Add(this.rdoEvet);
-            this.panel1.Controls.Add(this.dtCikisTarihi);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtMesafeKm);
-            this.panel1.Controls.Add(this.txtMesafe);
-            this.panel1.Controls.Add(this.txtMarka);
-            this.panel1.Controls.Add(this.txtModel);
-            this.panel1.Controls.Add(this.txtSasiNo);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(50, 41);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(507, 598);
-            this.panel1.TabIndex = 0;
-            // 
-            // btnGuncellemeYap
-            // 
-            this.btnGuncellemeYap.BackColor = System.Drawing.Color.Teal;
-            this.btnGuncellemeYap.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-            this.btnGuncellemeYap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuncellemeYap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuncellemeYap.ForeColor = System.Drawing.Color.Transparent;
-            this.btnGuncellemeYap.Location = new System.Drawing.Point(653, 266);
-            this.btnGuncellemeYap.Name = "btnGuncellemeYap";
-            this.btnGuncellemeYap.Size = new System.Drawing.Size(234, 42);
-            this.btnGuncellemeYap.TabIndex = 19;
-            this.btnGuncellemeYap.Text = "Güncelleme Yap";
-            this.btnGuncellemeYap.UseVisualStyleBackColor = false;
-            this.btnGuncellemeYap.Click += new System.EventHandler(this.BtnGuncellemeYap_Click);
-            // 
-            // cmbArabaListesi
-            // 
-            this.cmbArabaListesi.FormattingEnabled = true;
-            this.cmbArabaListesi.Location = new System.Drawing.Point(623, 201);
-            this.cmbArabaListesi.Name = "cmbArabaListesi";
-            this.cmbArabaListesi.Size = new System.Drawing.Size(307, 24);
-            this.cmbArabaListesi.TabIndex = 18;
-            // 
-            // btnSil
-            // 
-            this.btnSil.BackColor = System.Drawing.Color.Teal;
-            this.btnSil.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSil.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSil.Location = new System.Drawing.Point(720, 335);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(99, 42);
-            this.btnSil.TabIndex = 17;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = false;
-            this.btnSil.Click += new System.EventHandler(this.BtnSil_Click);
+            this.pnlArabaIslem.Controls.Add(this.btnGuncelle);
+            this.pnlArabaIslem.Controls.Add(this.btnArabaEkle);
+            this.pnlArabaIslem.Controls.Add(this.label8);
+            this.pnlArabaIslem.Controls.Add(this.rdoHayir);
+            this.pnlArabaIslem.Controls.Add(this.rdoEvet);
+            this.pnlArabaIslem.Controls.Add(this.dtCikisTarihi);
+            this.pnlArabaIslem.Controls.Add(this.label7);
+            this.pnlArabaIslem.Controls.Add(this.label6);
+            this.pnlArabaIslem.Controls.Add(this.label5);
+            this.pnlArabaIslem.Controls.Add(this.label4);
+            this.pnlArabaIslem.Controls.Add(this.label3);
+            this.pnlArabaIslem.Controls.Add(this.label2);
+            this.pnlArabaIslem.Controls.Add(this.txtMesafeKm);
+            this.pnlArabaIslem.Controls.Add(this.txtMesafe);
+            this.pnlArabaIslem.Controls.Add(this.txtMarka);
+            this.pnlArabaIslem.Controls.Add(this.txtModel);
+            this.pnlArabaIslem.Controls.Add(this.txtSasiNo);
+            this.pnlArabaIslem.Controls.Add(this.label1);
+            this.pnlArabaIslem.Location = new System.Drawing.Point(50, 41);
+            this.pnlArabaIslem.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlArabaIslem.Name = "pnlArabaIslem";
+            this.pnlArabaIslem.Size = new System.Drawing.Size(507, 598);
+            this.pnlArabaIslem.TabIndex = 0;
             // 
             // btnGuncelle
             // 
@@ -130,7 +107,7 @@
             this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuncelle.ForeColor = System.Drawing.Color.Transparent;
-            this.btnGuncelle.Location = new System.Drawing.Point(175, 513);
+            this.btnGuncelle.Location = new System.Drawing.Point(109, 477);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(99, 42);
             this.btnGuncelle.TabIndex = 16;
@@ -145,34 +122,13 @@
             this.btnArabaEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnArabaEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArabaEkle.ForeColor = System.Drawing.Color.Transparent;
-            this.btnArabaEkle.Location = new System.Drawing.Point(328, 513);
+            this.btnArabaEkle.Location = new System.Drawing.Point(267, 477);
             this.btnArabaEkle.Name = "btnArabaEkle";
             this.btnArabaEkle.Size = new System.Drawing.Size(124, 42);
             this.btnArabaEkle.TabIndex = 15;
             this.btnArabaEkle.Text = "Ekle";
             this.btnArabaEkle.UseVisualStyleBackColor = false;
             this.btnArabaEkle.Click += new System.EventHandler(this.BtnArabaEkle_Click);
-            // 
-            // pbResimEkle
-            // 
-            this.pbResimEkle.Image = ((System.Drawing.Image)(resources.GetObject("pbResimEkle.Image")));
-            this.pbResimEkle.Location = new System.Drawing.Point(267, 439);
-            this.pbResimEkle.Name = "pbResimEkle";
-            this.pbResimEkle.Size = new System.Drawing.Size(42, 38);
-            this.pbResimEkle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbResimEkle.TabIndex = 14;
-            this.pbResimEkle.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(140, 448);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 20);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Resim Ekle :\r\n";
             // 
             // label8
             // 
@@ -331,6 +287,181 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Araba Şasi Numarası :";
             // 
+            // btnGuncellemeYap
+            // 
+            this.btnGuncellemeYap.BackColor = System.Drawing.Color.Teal;
+            this.btnGuncellemeYap.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnGuncellemeYap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuncellemeYap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuncellemeYap.ForeColor = System.Drawing.Color.Transparent;
+            this.btnGuncellemeYap.Location = new System.Drawing.Point(653, 139);
+            this.btnGuncellemeYap.Name = "btnGuncellemeYap";
+            this.btnGuncellemeYap.Size = new System.Drawing.Size(165, 42);
+            this.btnGuncellemeYap.TabIndex = 19;
+            this.btnGuncellemeYap.Text = "Güncelleme Yap";
+            this.btnGuncellemeYap.UseVisualStyleBackColor = false;
+            this.btnGuncellemeYap.Click += new System.EventHandler(this.BtnGuncellemeYap_Click);
+            // 
+            // cmbArabaListesi
+            // 
+            this.cmbArabaListesi.FormattingEnabled = true;
+            this.cmbArabaListesi.Location = new System.Drawing.Point(653, 82);
+            this.cmbArabaListesi.Name = "cmbArabaListesi";
+            this.cmbArabaListesi.Size = new System.Drawing.Size(307, 24);
+            this.cmbArabaListesi.TabIndex = 18;
+            // 
+            // btnSil
+            // 
+            this.btnSil.BackColor = System.Drawing.Color.Teal;
+            this.btnSil.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSil.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSil.Location = new System.Drawing.Point(861, 139);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(99, 42);
+            this.btnSil.TabIndex = 17;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.BtnSil_Click);
+            // 
+            // pnlResimIslem
+            // 
+            this.pnlResimIslem.Controls.Add(this.pbResimKaydet);
+            this.pnlResimIslem.Controls.Add(this.label12);
+            this.pnlResimIslem.Controls.Add(this.pbAraba2);
+            this.pnlResimIslem.Controls.Add(this.pbAraba5);
+            this.pnlResimIslem.Controls.Add(this.pbAraba4);
+            this.pnlResimIslem.Controls.Add(this.pbAraba3);
+            this.pnlResimIslem.Controls.Add(this.pbAraba1);
+            this.pnlResimIslem.Controls.Add(this.label11);
+            this.pnlResimIslem.Controls.Add(this.pbResimEkle);
+            this.pnlResimIslem.Controls.Add(this.label9);
+            this.pnlResimIslem.Location = new System.Drawing.Point(623, 226);
+            this.pnlResimIslem.Name = "pnlResimIslem";
+            this.pnlResimIslem.Size = new System.Drawing.Size(402, 413);
+            this.pnlResimIslem.TabIndex = 20;
+            // 
+            // pbResimEkle
+            // 
+            this.pbResimEkle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbResimEkle.Image = ((System.Drawing.Image)(resources.GetObject("pbResimEkle.Image")));
+            this.pbResimEkle.Location = new System.Drawing.Point(120, 52);
+            this.pbResimEkle.Name = "pbResimEkle";
+            this.pbResimEkle.Size = new System.Drawing.Size(42, 38);
+            this.pbResimEkle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbResimEkle.TabIndex = 16;
+            this.pbResimEkle.TabStop = false;
+            this.pbResimEkle.Click += new System.EventHandler(this.pbResimEkle_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(16, 61);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 20);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Resim Ekle :\r\n";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(652, 41);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(257, 17);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "İşlem yapmak istediğiniz arabayı seçiniz";
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.Teal;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Transparent;
+            this.label11.Location = new System.Drawing.Point(0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(402, 41);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Resim eklemek istediğiniz arabayı seneçekler kısmından lütfen seçiniz..";
+            // 
+            // pbAraba1
+            // 
+            this.pbAraba1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbAraba1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbAraba1.Location = new System.Drawing.Point(39, 108);
+            this.pbAraba1.Name = "pbAraba1";
+            this.pbAraba1.Size = new System.Drawing.Size(118, 80);
+            this.pbAraba1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAraba1.TabIndex = 18;
+            this.pbAraba1.TabStop = false;
+            // 
+            // pbAraba3
+            // 
+            this.pbAraba3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbAraba3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbAraba3.Location = new System.Drawing.Point(40, 217);
+            this.pbAraba3.Name = "pbAraba3";
+            this.pbAraba3.Size = new System.Drawing.Size(118, 80);
+            this.pbAraba3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAraba3.TabIndex = 18;
+            this.pbAraba3.TabStop = false;
+            // 
+            // pbAraba2
+            // 
+            this.pbAraba2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbAraba2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbAraba2.Location = new System.Drawing.Point(204, 107);
+            this.pbAraba2.Name = "pbAraba2";
+            this.pbAraba2.Size = new System.Drawing.Size(118, 80);
+            this.pbAraba2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAraba2.TabIndex = 18;
+            this.pbAraba2.TabStop = false;
+            // 
+            // pbAraba4
+            // 
+            this.pbAraba4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbAraba4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbAraba4.Location = new System.Drawing.Point(204, 217);
+            this.pbAraba4.Name = "pbAraba4";
+            this.pbAraba4.Size = new System.Drawing.Size(118, 80);
+            this.pbAraba4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAraba4.TabIndex = 18;
+            this.pbAraba4.TabStop = false;
+            // 
+            // pbAraba5
+            // 
+            this.pbAraba5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbAraba5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbAraba5.Location = new System.Drawing.Point(39, 319);
+            this.pbAraba5.Name = "pbAraba5";
+            this.pbAraba5.Size = new System.Drawing.Size(118, 80);
+            this.pbAraba5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAraba5.TabIndex = 18;
+            this.pbAraba5.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(200, 61);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(115, 20);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "Resim Kaydet :";
+            // 
+            // pbResimKaydet
+            // 
+            this.pbResimKaydet.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbResimKaydet.BackgroundImage")));
+            this.pbResimKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbResimKaydet.Location = new System.Drawing.Point(324, 61);
+            this.pbResimKaydet.Name = "pbResimKaydet";
+            this.pbResimKaydet.Size = new System.Drawing.Size(39, 29);
+            this.pbResimKaydet.TabIndex = 20;
+            this.pbResimKaydet.TabStop = false;
+            this.pbResimKaydet.Click += new System.EventHandler(this.pbResimKaydet_Click);
+            // 
             // ArabaIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -338,8 +469,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1101, 671);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.pnlResimIslem);
             this.Controls.Add(this.btnGuncellemeYap);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlArabaIslem);
             this.Controls.Add(this.cmbArabaListesi);
             this.Controls.Add(this.btnSil);
             this.DoubleBuffered = true;
@@ -350,16 +483,25 @@
             this.Text = "ArabaIslemleri";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ArabaIslemleri_FormClosing);
             this.Load += new System.EventHandler(this.ArabaIslemleri_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlArabaIslem.ResumeLayout(false);
+            this.pnlArabaIslem.PerformLayout();
+            this.pnlResimIslem.ResumeLayout(false);
+            this.pnlResimIslem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbResimEkle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAraba1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAraba3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAraba2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAraba4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAraba5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbResimKaydet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlArabaIslem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSasiNo;
         private System.Windows.Forms.Label label2;
@@ -376,12 +518,22 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMesafeKm;
         private System.Windows.Forms.TextBox txtMesafe;
-        private System.Windows.Forms.PictureBox pbResimEkle;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnArabaEkle;
         private System.Windows.Forms.ComboBox cmbArabaListesi;
         private System.Windows.Forms.Button btnGuncellemeYap;
+        private System.Windows.Forms.Panel pnlResimIslem;
+        private System.Windows.Forms.PictureBox pbAraba2;
+        private System.Windows.Forms.PictureBox pbAraba5;
+        private System.Windows.Forms.PictureBox pbAraba4;
+        private System.Windows.Forms.PictureBox pbAraba3;
+        private System.Windows.Forms.PictureBox pbAraba1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pbResimEkle;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pbResimKaydet;
     }
 }

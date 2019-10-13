@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +26,11 @@ namespace RentACar.UI
                     if ((item as ComboBox).SelectedIndex == -1)
                         return true;
                 }
+                else if(item is PictureBox && item.Name.StartsWith("pbAraba"))
+                {
+                    if ((item as PictureBox).Tag == null)
+                        return true;
+                }
             }
             return false;
         }
@@ -40,7 +47,16 @@ namespace RentACar.UI
             }
         }
 
-       
+        public static byte[] ConvertImageToByte(Image img)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
+        }
+
+   
     }
 }
 

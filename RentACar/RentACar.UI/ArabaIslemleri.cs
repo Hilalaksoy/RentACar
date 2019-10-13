@@ -16,6 +16,7 @@ namespace RentACar.UI
     {
         Context db;
         GirisEkrani girisEkrani;
+
         public ArabaIslemleri(GirisEkrani giris, Context context)
         {
             girisEkrani = giris;
@@ -23,9 +24,20 @@ namespace RentACar.UI
             InitializeComponent();
         }
 
+        private void ArabaIslemleri_Load(object sender, EventArgs e)
+        {
+            cmbArabaListesi.DataSource = db.Arabalar.ToList();
+            cmbArabaListesi.DisplayMember = "Model";
+            cmbArabaListesi.ValueMember = "ID";
+            //cmbArabaListesi.SelectedIndex = 0;
+
+            btnGuncelle.Enabled = false;
+            rdoEvet.Checked = true;
+
+        }
         private void BtnArabaEkle_Click(object sender, EventArgs e)
         {
-            if (Metotlar.BosAlanVarMi(panel1))
+            if (Metotlar.BosAlanVarMi(pnlArabaIslem))
             {
                 MessageBox.Show("Lütfen tüm alanları doldurunuz.");
             }
@@ -52,7 +64,7 @@ namespace RentACar.UI
                 cmbArabaListesi.ValueMember = "ID";
                 
 
-                Metotlar.Temizle(panel1);
+                Metotlar.Temizle(pnlArabaIslem);
 
                 MessageBox.Show("Kayıt işlemi başarıyla gerçekleşti.");
             }
@@ -62,11 +74,11 @@ namespace RentACar.UI
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
-            if (Metotlar.BosAlanVarMi(panel1))
+            //Güncelle
+            if (Metotlar.BosAlanVarMi(pnlArabaIslem))
             {
                 MessageBox.Show("Lütfen tüm alanları doldurunuz");
             }
-
             else
             {
                 Araba araba = db.Arabalar.Where(x => x.ID == (int)cmbArabaListesi.SelectedValue).FirstOrDefault();
@@ -84,7 +96,7 @@ namespace RentACar.UI
                 cmbArabaListesi.DisplayMember = "Model";
                 cmbArabaListesi.ValueMember = "ID";
 
-                Metotlar.Temizle(panel1);
+                Metotlar.Temizle(pnlArabaIslem);
 
                 MessageBox.Show("Güncelleme başarılı.");
 
@@ -97,20 +109,6 @@ namespace RentACar.UI
 
             
         }
-
-        private void ArabaIslemleri_Load(object sender, EventArgs e)
-        {
-            cmbArabaListesi.DataSource = db.Arabalar.ToList();
-            cmbArabaListesi.DisplayMember = "Model";
-            cmbArabaListesi.ValueMember = "ID";
-            cmbArabaListesi.SelectedIndex = 0;
-
-            btnGuncelle.Enabled = false;
-            rdoEvet.Checked = true;
-            
-        }
-
-        
 
         private void BtnSil_Click(object sender, EventArgs e)
         {
@@ -142,6 +140,7 @@ namespace RentACar.UI
 
         private void BtnGuncellemeYap_Click(object sender, EventArgs e)
         {
+            //Günncelleme Yap
             btnGuncelle.Enabled = true;
             btnArabaEkle.Enabled = false;
             btnGuncellemeYap.Enabled = false;
@@ -161,6 +160,94 @@ namespace RentACar.UI
             else rdoHayir.Checked = true;
         }
 
-        
+        private void pbResimEkle_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "(png, jpg)|*.png;*.jpg";
+            ofd.ValidateNames = true;
+            ofd.Multiselect = false;
+
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                foreach (Control item in pnlResimIslem.Controls)
+                {
+                    if (item is PictureBox && item.Name.StartsWith("pbAraba"))
+                    {
+                        if(((PictureBox)item).Tag == null)
+                        {
+                            ((PictureBox)item).Image = Image.FromFile(ofd.FileName);
+                            ((PictureBox)item).Tag = System.IO.Path.GetExtension(ofd.FileName);
+                            break;
+                        }
+                        else if(((PictureBox)item).Tag != null && pnlResimIslem.Controls.IndexOf(((PictureBox)item)) == 4)
+                        {
+                            MessageBox.Show("Maksimum 5 tane resim ekleyebilirsiniz !!");
+                        }
+                    }                  
+                }
+            }
+           
+          
+        }
+
+        // async - await  --> İşlemleri bir kerede yapmayı sağlar.
+        private async void pbResimKaydet_Click(object sender, EventArgs e)
+        {
+            //DONE:
+            //Kontroller yapılsın resimler bossa çalışmasın.
+            //cmb seçilmediyse uyarı versin.
+            if (Metotlar.BosAlanVarMi(pnlResimIslem))
+            {
+                MessageBox.Show("Lütfen tüm resim kutularını doldurunuz");
+            }
+            else
+            {
+                if(cmbArabaListesi.SelectedIndex != -1)
+                {
+                    Araba araba = db.Arabalar.Where(x => x.ID == (int)cmbArabaListesi.SelectedValue).FirstOrDefault();
+
+                    Resim resim1 = new Resim()
+                    {
+                        Fotograf = Metotlar.ConvertImageToByte(pbAraba1.Image),
+                        ID = araba.ID,
+                    };
+                    Resim resim2 = new Resim()
+                    {
+                        Fotograf = Metotlar.ConvertImageToByte(pbAraba2.Image),
+                        ID = araba.ID,
+                    };
+                    Resim resim3 = new Resim()
+                    {
+                        Fotograf = Metotlar.ConvertImageToByte(pbAraba3.Image),
+                        ID = araba.ID,
+                    };
+                    Resim resim4 = new Resim()
+                    {
+                        Fotograf = Metotlar.ConvertImageToByte(pbAraba4.Image),
+                        ID = araba.ID,
+                    };
+                    Resim resim5 = new Resim()
+                    {
+                        Fotograf = Metotlar.ConvertImageToByte(pbAraba5.Image),
+                        ID = araba.ID,
+                    };
+
+                    db.Resimler.Add(resim1);
+                    db.Resimler.Add(resim2);
+                    db.Resimler.Add(resim3);
+                    db.Resimler.Add(resim4);
+                    db.Resimler.Add(resim5);
+
+                    await db.SaveChangesAsync();
+                    MessageBox.Show("Resimler başarılı bir şekilde kaydedildi.", "Mesaj Bilgisi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen seçeneklerden hangi arabayı seçiniz..");
+                }
+            }
+           
+        }
     }
 }

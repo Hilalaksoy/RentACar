@@ -11,7 +11,7 @@ namespace RentACar.DATA
         public int ResimID { get; set; }
         public byte[] Fotograf { get; set; }
 
-        public int ID { get; set; }
-        public virtual Araba Araba { get; set; }
+        public int ID { get; set;}  //Fk 
+        public virtual Araba Araba { get; set; }  // Bire -Çok
     }
 }
