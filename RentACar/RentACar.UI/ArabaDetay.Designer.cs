@@ -31,6 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArabaDetay));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlArabaDetay = new System.Windows.Forms.Panel();
+            this.lblSasiNo = new System.Windows.Forms.Label();
+            this.lblFiyat = new System.Windows.Forms.Label();
+            this.lblMesafeKm = new System.Windows.Forms.Label();
+            this.lblMesafe = new System.Windows.Forms.Label();
+            this.lblCikisTarihi = new System.Windows.Forms.Label();
+            this.lblModel = new System.Windows.Forms.Label();
+            this.lblMarka = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,14 +51,8 @@
             this.pbAraba3 = new System.Windows.Forms.PictureBox();
             this.pbAraba2 = new System.Windows.Forms.PictureBox();
             this.pbAraba1 = new System.Windows.Forms.PictureBox();
-            this.lblMarka = new System.Windows.Forms.Label();
-            this.lblSasiNo = new System.Windows.Forms.Label();
-            this.lblModel = new System.Windows.Forms.Label();
-            this.lblCikisTarihi = new System.Windows.Forms.Label();
-            this.lblMesafe = new System.Windows.Forms.Label();
-            this.lblMesafeKm = new System.Windows.Forms.Label();
-            this.lblFiyat = new System.Windows.Forms.Label();
             this.btnGeri = new System.Windows.Forms.Button();
+            this.grpResimler = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlArabaDetay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAraba5)).BeginInit();
@@ -59,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAraba3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAraba2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAraba1)).BeginInit();
+            this.grpResimler.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -92,6 +94,62 @@
             this.pnlArabaDetay.Name = "pnlArabaDetay";
             this.pnlArabaDetay.Size = new System.Drawing.Size(468, 386);
             this.pnlArabaDetay.TabIndex = 8;
+            // 
+            // lblSasiNo
+            // 
+            this.lblSasiNo.AutoSize = true;
+            this.lblSasiNo.Location = new System.Drawing.Point(206, 46);
+            this.lblSasiNo.Name = "lblSasiNo";
+            this.lblSasiNo.Size = new System.Drawing.Size(0, 13);
+            this.lblSasiNo.TabIndex = 3;
+            // 
+            // lblFiyat
+            // 
+            this.lblFiyat.AutoSize = true;
+            this.lblFiyat.Location = new System.Drawing.Point(206, 307);
+            this.lblFiyat.Name = "lblFiyat";
+            this.lblFiyat.Size = new System.Drawing.Size(0, 13);
+            this.lblFiyat.TabIndex = 3;
+            // 
+            // lblMesafeKm
+            // 
+            this.lblMesafeKm.AutoSize = true;
+            this.lblMesafeKm.Location = new System.Drawing.Point(206, 257);
+            this.lblMesafeKm.Name = "lblMesafeKm";
+            this.lblMesafeKm.Size = new System.Drawing.Size(0, 13);
+            this.lblMesafeKm.TabIndex = 3;
+            // 
+            // lblMesafe
+            // 
+            this.lblMesafe.AutoSize = true;
+            this.lblMesafe.Location = new System.Drawing.Point(206, 210);
+            this.lblMesafe.Name = "lblMesafe";
+            this.lblMesafe.Size = new System.Drawing.Size(0, 13);
+            this.lblMesafe.TabIndex = 3;
+            // 
+            // lblCikisTarihi
+            // 
+            this.lblCikisTarihi.AutoSize = true;
+            this.lblCikisTarihi.Location = new System.Drawing.Point(206, 171);
+            this.lblCikisTarihi.Name = "lblCikisTarihi";
+            this.lblCikisTarihi.Size = new System.Drawing.Size(0, 13);
+            this.lblCikisTarihi.TabIndex = 3;
+            // 
+            // lblModel
+            // 
+            this.lblModel.AutoSize = true;
+            this.lblModel.Location = new System.Drawing.Point(206, 130);
+            this.lblModel.Name = "lblModel";
+            this.lblModel.Size = new System.Drawing.Size(0, 13);
+            this.lblModel.TabIndex = 3;
+            // 
+            // lblMarka
+            // 
+            this.lblMarka.AutoSize = true;
+            this.lblMarka.Location = new System.Drawing.Point(206, 87);
+            this.lblMarka.Name = "lblMarka";
+            this.lblMarka.Size = new System.Drawing.Size(0, 13);
+            this.lblMarka.TabIndex = 3;
             // 
             // label7
             // 
@@ -187,7 +245,7 @@
             // pbAraba5
             // 
             this.pbAraba5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbAraba5.Location = new System.Drawing.Point(810, 46);
+            this.pbAraba5.Location = new System.Drawing.Point(760, 15);
             this.pbAraba5.Name = "pbAraba5";
             this.pbAraba5.Size = new System.Drawing.Size(145, 127);
             this.pbAraba5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -197,7 +255,7 @@
             // pbAraba4
             // 
             this.pbAraba4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbAraba4.Location = new System.Drawing.Point(627, 47);
+            this.pbAraba4.Location = new System.Drawing.Point(583, 15);
             this.pbAraba4.Name = "pbAraba4";
             this.pbAraba4.Size = new System.Drawing.Size(145, 127);
             this.pbAraba4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -207,7 +265,7 @@
             // pbAraba3
             // 
             this.pbAraba3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbAraba3.Location = new System.Drawing.Point(435, 47);
+            this.pbAraba3.Location = new System.Drawing.Point(399, 15);
             this.pbAraba3.Name = "pbAraba3";
             this.pbAraba3.Size = new System.Drawing.Size(145, 127);
             this.pbAraba3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -217,7 +275,7 @@
             // pbAraba2
             // 
             this.pbAraba2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbAraba2.Location = new System.Drawing.Point(241, 47);
+            this.pbAraba2.Location = new System.Drawing.Point(216, 15);
             this.pbAraba2.Name = "pbAraba2";
             this.pbAraba2.Size = new System.Drawing.Size(145, 127);
             this.pbAraba2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -227,68 +285,12 @@
             // pbAraba1
             // 
             this.pbAraba1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbAraba1.Location = new System.Drawing.Point(50, 47);
+            this.pbAraba1.Location = new System.Drawing.Point(34, 15);
             this.pbAraba1.Name = "pbAraba1";
             this.pbAraba1.Size = new System.Drawing.Size(145, 127);
             this.pbAraba1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbAraba1.TabIndex = 7;
             this.pbAraba1.TabStop = false;
-            // 
-            // lblMarka
-            // 
-            this.lblMarka.AutoSize = true;
-            this.lblMarka.Location = new System.Drawing.Point(206, 87);
-            this.lblMarka.Name = "lblMarka";
-            this.lblMarka.Size = new System.Drawing.Size(0, 13);
-            this.lblMarka.TabIndex = 3;
-            // 
-            // lblSasiNo
-            // 
-            this.lblSasiNo.AutoSize = true;
-            this.lblSasiNo.Location = new System.Drawing.Point(206, 46);
-            this.lblSasiNo.Name = "lblSasiNo";
-            this.lblSasiNo.Size = new System.Drawing.Size(0, 13);
-            this.lblSasiNo.TabIndex = 3;
-            // 
-            // lblModel
-            // 
-            this.lblModel.AutoSize = true;
-            this.lblModel.Location = new System.Drawing.Point(206, 130);
-            this.lblModel.Name = "lblModel";
-            this.lblModel.Size = new System.Drawing.Size(0, 13);
-            this.lblModel.TabIndex = 3;
-            // 
-            // lblCikisTarihi
-            // 
-            this.lblCikisTarihi.AutoSize = true;
-            this.lblCikisTarihi.Location = new System.Drawing.Point(206, 171);
-            this.lblCikisTarihi.Name = "lblCikisTarihi";
-            this.lblCikisTarihi.Size = new System.Drawing.Size(0, 13);
-            this.lblCikisTarihi.TabIndex = 3;
-            // 
-            // lblMesafe
-            // 
-            this.lblMesafe.AutoSize = true;
-            this.lblMesafe.Location = new System.Drawing.Point(206, 210);
-            this.lblMesafe.Name = "lblMesafe";
-            this.lblMesafe.Size = new System.Drawing.Size(0, 13);
-            this.lblMesafe.TabIndex = 3;
-            // 
-            // lblMesafeKm
-            // 
-            this.lblMesafeKm.AutoSize = true;
-            this.lblMesafeKm.Location = new System.Drawing.Point(206, 257);
-            this.lblMesafeKm.Name = "lblMesafeKm";
-            this.lblMesafeKm.Size = new System.Drawing.Size(0, 13);
-            this.lblMesafeKm.TabIndex = 3;
-            // 
-            // lblFiyat
-            // 
-            this.lblFiyat.AutoSize = true;
-            this.lblFiyat.Location = new System.Drawing.Point(206, 307);
-            this.lblFiyat.Name = "lblFiyat";
-            this.lblFiyat.Size = new System.Drawing.Size(0, 13);
-            this.lblFiyat.TabIndex = 3;
             // 
             // btnGeri
             // 
@@ -305,23 +307,35 @@
             this.btnGeri.UseVisualStyleBackColor = false;
             this.btnGeri.Click += new System.EventHandler(this.btnGeri_Click);
             // 
+            // grpResimler
+            // 
+            this.grpResimler.BackColor = System.Drawing.Color.Bisque;
+            this.grpResimler.Controls.Add(this.pbAraba1);
+            this.grpResimler.Controls.Add(this.pbAraba2);
+            this.grpResimler.Controls.Add(this.pbAraba3);
+            this.grpResimler.Controls.Add(this.pbAraba4);
+            this.grpResimler.Controls.Add(this.pbAraba5);
+            this.grpResimler.Location = new System.Drawing.Point(29, 30);
+            this.grpResimler.Name = "grpResimler";
+            this.grpResimler.Size = new System.Drawing.Size(945, 160);
+            this.grpResimler.TabIndex = 10;
+            this.grpResimler.TabStop = false;
+            // 
             // ArabaDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1008, 663);
+            this.ClientSize = new System.Drawing.Size(1008, 689);
+            this.Controls.Add(this.grpResimler);
             this.Controls.Add(this.btnGeri);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlArabaDetay);
-            this.Controls.Add(this.pbAraba5);
-            this.Controls.Add(this.pbAraba4);
-            this.Controls.Add(this.pbAraba3);
-            this.Controls.Add(this.pbAraba2);
-            this.Controls.Add(this.pbAraba1);
+            this.DoubleBuffered = true;
             this.Name = "ArabaDetay";
             this.Text = "ArabaDetay";
+            this.Load += new System.EventHandler(this.ArabaDetay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlArabaDetay.ResumeLayout(false);
             this.pnlArabaDetay.PerformLayout();
@@ -330,6 +344,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAraba3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAraba2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAraba1)).EndInit();
+            this.grpResimler.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -359,5 +374,6 @@
         private System.Windows.Forms.Label lblFiyat;
         private System.Windows.Forms.Label lblMesafeKm;
         private System.Windows.Forms.Button btnGeri;
+        private System.Windows.Forms.GroupBox grpResimler;
     }
 }

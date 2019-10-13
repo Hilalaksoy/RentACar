@@ -10,7 +10,7 @@ namespace RentACar.DATA
     {
         public int ID { get; set; }
         public int GunSayisi { get; set; }
-        public decimal Fiyat { get; set; }
+        public decimal Fiyat { get; set; }  //İndirimli Fiyat
         public float Indirim { get; set; }
 
         public int MusteriID { get; set; }  //FK 

@@ -49,6 +49,7 @@ namespace RentACar.UI
 
         public static byte[] ConvertImageToByte(Image img)
         {
+            //Dışarıdan gelen image tipindeki veriyi byte[] dönüştürür.
             using (MemoryStream ms = new MemoryStream())
             {
                 img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
@@ -56,6 +57,14 @@ namespace RentACar.UI
             }
         }
 
+        public static Image ConvertBinaryToImage(byte[] data)
+        {
+            //Byte[] tipindeki veriyi Image tipine dönüştürür.
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
    
     }
 }

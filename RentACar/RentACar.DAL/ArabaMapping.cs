@@ -19,6 +19,7 @@ namespace RentACar.DAL
             Property(x => x.Model).HasMaxLength(20).IsRequired();
             Property(x => x.CikisTarihi).HasColumnType("datetime2").IsRequired();
             Property(x => x.KiradaMi).HasColumnType("bit").IsRequired();
+            Property(x => x.Fiyat).HasColumnType("money").IsRequired();
 
             HasRequired(x => x.Kiralama).WithRequiredPrincipal(x => x.Araba);
 

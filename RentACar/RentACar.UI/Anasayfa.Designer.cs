@@ -71,6 +71,7 @@
             this.dgvArabaListesi.ReadOnly = true;
             this.dgvArabaListesi.Size = new System.Drawing.Size(1008, 399);
             this.dgvArabaListesi.TabIndex = 1;
+            this.dgvArabaListesi.SelectionChanged += new System.EventHandler(this.dgvArabaListesi_SelectionChanged);
             // 
             // Anasayfa
             // 
@@ -83,6 +84,7 @@
             this.DoubleBuffered = true;
             this.Name = "Anasayfa";
             this.Text = "Anasayfa";
+            this.Load += new System.EventHandler(this.Anasayfa_Load);
             this.pnlAnasayfa.ResumeLayout(false);
             this.pnlAnasayfa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArabaListesi)).EndInit();

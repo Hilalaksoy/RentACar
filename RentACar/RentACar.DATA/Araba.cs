@@ -13,7 +13,7 @@ namespace RentACar.DATA
         public string Model { get; set; }
         public string Marka { get; set; }
         public DateTime CikisTarihi { get; set; }
-
+        public decimal Fiyat { get; set; }
         public bool KiradaMi { get; set; }
         public int Mesafe { get; set; }
         public int YillikMesafe { get; set; }

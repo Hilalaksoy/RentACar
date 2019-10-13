@@ -52,7 +52,8 @@ namespace RentACar.UI
                     CikisTarihi = dtCikisTarihi.Value,
                     KiradaMi = rdoEvet.Checked,
                     Mesafe = Convert.ToInt32(txtMesafe.Text),
-                    YillikMesafe = Convert.ToInt32(txtMesafeKm.Text)
+                    YillikMesafe = Convert.ToInt32(txtMesafeKm.Text),
+                    Fiyat = Convert.ToDecimal(txtFiyat.Text)
                 };
 
                 db.Arabalar.Add(araba);
@@ -62,19 +63,19 @@ namespace RentACar.UI
                 cmbArabaListesi.DataSource = db.Arabalar.ToList();
                 cmbArabaListesi.DisplayMember = "Model";
                 cmbArabaListesi.ValueMember = "ID";
-                
+
 
                 Metotlar.Temizle(pnlArabaIslem);
 
                 MessageBox.Show("Kayıt işlemi başarıyla gerçekleşti.");
             }
 
-            
+
         }
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
-            //Güncelle
+            //Db Güncelle
             if (Metotlar.BosAlanVarMi(pnlArabaIslem))
             {
                 MessageBox.Show("Lütfen tüm alanları doldurunuz");
@@ -89,6 +90,7 @@ namespace RentACar.UI
                 araba.Mesafe = Convert.ToInt32(txtMesafe.Text);
                 araba.YillikMesafe = Convert.ToInt32(txtMesafeKm.Text);
                 araba.CikisTarihi = dtCikisTarihi.Value;
+                araba.Fiyat = Convert.ToDecimal(txtFiyat.Text);
 
                 db.SaveChanges();
 
@@ -107,7 +109,7 @@ namespace RentACar.UI
                 cmbArabaListesi.Enabled = true;
             }
 
-            
+
         }
 
         private void BtnSil_Click(object sender, EventArgs e)
@@ -116,7 +118,7 @@ namespace RentACar.UI
 
             DialogResult ds = new DialogResult();
 
-            ds = MessageBox.Show("Silme işlemi yapıldıktan sonra geri alınamaz. Seçilen araba silinsin mi?","Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            ds = MessageBox.Show("Silme işlemi yapıldıktan sonra geri alınamaz. Seçilen araba silinsin mi?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (ds == DialogResult.Yes)
             {
@@ -130,7 +132,7 @@ namespace RentACar.UI
             cmbArabaListesi.DisplayMember = "Model";
             cmbArabaListesi.ValueMember = "ID";
 
-            
+
         }
 
         private void ArabaIslemleri_FormClosing(object sender, FormClosingEventArgs e)
@@ -140,7 +142,7 @@ namespace RentACar.UI
 
         private void BtnGuncellemeYap_Click(object sender, EventArgs e)
         {
-            //Günncelleme Yap
+            //Günncelleme Yap 
             btnGuncelle.Enabled = true;
             btnArabaEkle.Enabled = false;
             btnGuncellemeYap.Enabled = false;
@@ -154,6 +156,7 @@ namespace RentACar.UI
             txtMesafe.Text = araba.Mesafe.ToString();
             txtMesafeKm.Text = araba.YillikMesafe.ToString();
             dtCikisTarihi.Value = araba.CikisTarihi;
+            txtFiyat.Text = araba.Fiyat.ToString();
             if (araba.KiradaMi == true)
                 rdoEvet.Checked = true;
 
@@ -167,87 +170,60 @@ namespace RentACar.UI
             ofd.ValidateNames = true;
             ofd.Multiselect = false;
 
-            if(ofd.ShowDialog() == DialogResult.OK)
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
                 foreach (Control item in pnlResimIslem.Controls)
                 {
                     if (item is PictureBox && item.Name.StartsWith("pbAraba"))
                     {
-                        if(((PictureBox)item).Tag == null)
+                        if (((PictureBox)item).Tag == null)
                         {
                             ((PictureBox)item).Image = Image.FromFile(ofd.FileName);
                             ((PictureBox)item).Tag = System.IO.Path.GetExtension(ofd.FileName);
                             break;
                         }
-                        else if(((PictureBox)item).Tag != null && pnlResimIslem.Controls.IndexOf(((PictureBox)item)) == 4)
+                        else if (((PictureBox)item).Tag != null && pnlResimIslem.Controls.IndexOf(((PictureBox)item)) == 4)
                         {
                             MessageBox.Show("Maksimum 5 tane resim ekleyebilirsiniz !!");
                         }
-                    }                  
+                    }
                 }
             }
-           
-          
         }
-
         // async - await  --> İşlemleri bir kerede yapmayı sağlar.
         private async void pbResimKaydet_Click(object sender, EventArgs e)
         {
             //DONE:
-            //Kontroller yapılsın resimler bossa çalışmasın.
             //cmb seçilmediyse uyarı versin.
-            if (Metotlar.BosAlanVarMi(pnlResimIslem))
+
+            if (cmbArabaListesi.SelectedIndex != -1)
             {
-                MessageBox.Show("Lütfen tüm resim kutularını doldurunuz");
+                Araba araba = db.Arabalar.Where(x => x.ID == (int)cmbArabaListesi.SelectedValue).FirstOrDefault();
+
+                foreach (Control item in pnlResimIslem.Controls)
+                {
+                    if (item is PictureBox && item.Name.StartsWith("pbAraba"))
+                    {
+                        if (((PictureBox)item).Tag != null)
+                        {
+                            Resim resim1 = new Resim()
+                            {
+                                Fotograf = Metotlar.ConvertImageToByte(((PictureBox)item).Image),
+                                ID = araba.ID,
+                            };
+                            db.Resimler.Add(resim1);
+                        }
+                    }
+                }
+                await db.SaveChangesAsync();
+                MessageBox.Show("Resimler başarılı bir şekilde kaydedildi.", "Mesaj Bilgisi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                if(cmbArabaListesi.SelectedIndex != -1)
-                {
-                    Araba araba = db.Arabalar.Where(x => x.ID == (int)cmbArabaListesi.SelectedValue).FirstOrDefault();
-
-                    Resim resim1 = new Resim()
-                    {
-                        Fotograf = Metotlar.ConvertImageToByte(pbAraba1.Image),
-                        ID = araba.ID,
-                    };
-                    Resim resim2 = new Resim()
-                    {
-                        Fotograf = Metotlar.ConvertImageToByte(pbAraba2.Image),
-                        ID = araba.ID,
-                    };
-                    Resim resim3 = new Resim()
-                    {
-                        Fotograf = Metotlar.ConvertImageToByte(pbAraba3.Image),
-                        ID = araba.ID,
-                    };
-                    Resim resim4 = new Resim()
-                    {
-                        Fotograf = Metotlar.ConvertImageToByte(pbAraba4.Image),
-                        ID = araba.ID,
-                    };
-                    Resim resim5 = new Resim()
-                    {
-                        Fotograf = Metotlar.ConvertImageToByte(pbAraba5.Image),
-                        ID = araba.ID,
-                    };
-
-                    db.Resimler.Add(resim1);
-                    db.Resimler.Add(resim2);
-                    db.Resimler.Add(resim3);
-                    db.Resimler.Add(resim4);
-                    db.Resimler.Add(resim5);
-
-                    await db.SaveChangesAsync();
-                    MessageBox.Show("Resimler başarılı bir şekilde kaydedildi.", "Mesaj Bilgisi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-                else
-                {
-                    MessageBox.Show("Lütfen seçeneklerden hangi arabayı seçiniz..");
-                }
+                MessageBox.Show("Lütfen seçeneklerden hangi arabayı seçiniz..");
             }
-           
+
+
         }
     }
 }
