@@ -21,5 +21,10 @@ namespace RentACar.DATA
         public virtual Kiralama Kiralama { get; set; }  //Bire-Bir
 
         public virtual List<Resim> Resimler { get; set; }  //Bire - çok
+
+        public override string ToString()
+        {
+            return Marka + " " + Model;
+        }
     }
 }
