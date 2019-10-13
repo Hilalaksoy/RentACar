@@ -39,6 +39,8 @@ namespace RentACar.UI
                 else if (item is Label && item.Name.StartsWith("lbl")) item.Text = "";
             }
         }
+
+       
     }
 }
 

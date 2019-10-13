@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArabaIslemleri));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGuncellemeYap = new System.Windows.Forms.Button();
             this.cmbArabaListesi = new System.Windows.Forms.ComboBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
@@ -52,16 +53,12 @@
             this.txtModel = new System.Windows.Forms.TextBox();
             this.txtSasiNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnGirisVeyaGuncelle = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbResimEkle)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnGirisVeyaGuncelle);
-            this.panel1.Controls.Add(this.cmbArabaListesi);
-            this.panel1.Controls.Add(this.btnSil);
             this.panel1.Controls.Add(this.btnGuncelle);
             this.panel1.Controls.Add(this.btnArabaEkle);
             this.panel1.Controls.Add(this.pbResimEkle);
@@ -85,13 +82,28 @@
             this.panel1.Location = new System.Drawing.Point(50, 41);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1004, 598);
+            this.panel1.Size = new System.Drawing.Size(507, 598);
             this.panel1.TabIndex = 0;
+            // 
+            // btnGuncellemeYap
+            // 
+            this.btnGuncellemeYap.BackColor = System.Drawing.Color.Teal;
+            this.btnGuncellemeYap.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnGuncellemeYap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuncellemeYap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuncellemeYap.ForeColor = System.Drawing.Color.Transparent;
+            this.btnGuncellemeYap.Location = new System.Drawing.Point(653, 266);
+            this.btnGuncellemeYap.Name = "btnGuncellemeYap";
+            this.btnGuncellemeYap.Size = new System.Drawing.Size(234, 42);
+            this.btnGuncellemeYap.TabIndex = 19;
+            this.btnGuncellemeYap.Text = "Güncelleme Yap";
+            this.btnGuncellemeYap.UseVisualStyleBackColor = false;
+            this.btnGuncellemeYap.Click += new System.EventHandler(this.BtnGuncellemeYap_Click);
             // 
             // cmbArabaListesi
             // 
             this.cmbArabaListesi.FormattingEnabled = true;
-            this.cmbArabaListesi.Location = new System.Drawing.Point(575, 160);
+            this.cmbArabaListesi.Location = new System.Drawing.Point(623, 201);
             this.cmbArabaListesi.Name = "cmbArabaListesi";
             this.cmbArabaListesi.Size = new System.Drawing.Size(307, 24);
             this.cmbArabaListesi.TabIndex = 18;
@@ -103,7 +115,7 @@
             this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSil.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSil.Location = new System.Drawing.Point(672, 294);
+            this.btnSil.Location = new System.Drawing.Point(720, 335);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(99, 42);
             this.btnSil.TabIndex = 17;
@@ -250,7 +262,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(170, 203);
+            this.label3.Location = new System.Drawing.Point(167, 160);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 20);
@@ -261,7 +273,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(171, 160);
+            this.label2.Location = new System.Drawing.Point(168, 203);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 20);
@@ -286,7 +298,7 @@
             // 
             // txtMarka
             // 
-            this.txtMarka.Location = new System.Drawing.Point(267, 203);
+            this.txtMarka.Location = new System.Drawing.Point(264, 160);
             this.txtMarka.Margin = new System.Windows.Forms.Padding(4);
             this.txtMarka.Name = "txtMarka";
             this.txtMarka.Size = new System.Drawing.Size(185, 23);
@@ -294,7 +306,7 @@
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(267, 160);
+            this.txtModel.Location = new System.Drawing.Point(264, 203);
             this.txtModel.Margin = new System.Windows.Forms.Padding(4);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(185, 23);
@@ -319,21 +331,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Araba Şasi Numarası :";
             // 
-            // btnGirisVeyaGuncelle
-            // 
-            this.btnGirisVeyaGuncelle.BackColor = System.Drawing.Color.Teal;
-            this.btnGirisVeyaGuncelle.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-            this.btnGirisVeyaGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGirisVeyaGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGirisVeyaGuncelle.ForeColor = System.Drawing.Color.Transparent;
-            this.btnGirisVeyaGuncelle.Location = new System.Drawing.Point(605, 225);
-            this.btnGirisVeyaGuncelle.Name = "btnGirisVeyaGuncelle";
-            this.btnGirisVeyaGuncelle.Size = new System.Drawing.Size(234, 42);
-            this.btnGirisVeyaGuncelle.TabIndex = 19;
-            this.btnGirisVeyaGuncelle.Text = "Güncelleme Yap";
-            this.btnGirisVeyaGuncelle.UseVisualStyleBackColor = false;
-            this.btnGirisVeyaGuncelle.Click += new System.EventHandler(this.BtnGirisVeyaGuncelle_Click);
-            // 
             // ArabaIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -341,7 +338,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1101, 671);
+            this.Controls.Add(this.btnGuncellemeYap);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.cmbArabaListesi);
+            this.Controls.Add(this.btnSil);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -382,6 +382,6 @@
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnArabaEkle;
         private System.Windows.Forms.ComboBox cmbArabaListesi;
-        private System.Windows.Forms.Button btnGirisVeyaGuncelle;
+        private System.Windows.Forms.Button btnGuncellemeYap;
     }
 }

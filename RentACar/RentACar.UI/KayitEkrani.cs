@@ -25,18 +25,30 @@ namespace RentACar.UI
 
         private void btnKayitOl_Click(object sender, EventArgs e)
         {
-            Uye uye = new Uye()
+            if (db.Uyeler.FirstOrDefault(x=> x.Email == txtEmail.Text) == null)
             {
-                Email = txtEmail.Text,
-                Sifre = txtSifre.Text,
+                Uye uye = new Uye()
+                {
+                    Email = txtEmail.Text,
+                    Sifre = txtSifre.Text,
 
-            };
-            db.Uyeler.Add(uye);
+                };
+                db.Uyeler.Add(uye);
 
-            db.SaveChanges();
-            MessageBox.Show("Kayıdınız başarıyla oluşturulmuştur.");
-            girisEkrani.Show();
-            this.Hide();
+                db.SaveChanges();
+                MessageBox.Show("Kayıdınız başarıyla oluşturulmuştur.");
+
+                girisEkrani.Show();
+                this.Close();
+            }
+
+            else
+            {
+                MessageBox.Show("Bu E-Mail daha önceden alınmış! Lütfen başka bir E-Mail deneyiniz.");
+            }
+
+            
+            
         }
     }
 }

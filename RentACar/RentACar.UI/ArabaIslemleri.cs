@@ -43,7 +43,14 @@ namespace RentACar.UI
                     YillikMesafe = Convert.ToInt32(txtMesafeKm.Text)
                 };
 
+                db.Arabalar.Add(araba);
+
                 db.SaveChanges();
+
+                cmbArabaListesi.DataSource = db.Arabalar.ToList();
+                cmbArabaListesi.DisplayMember = "Model";
+                cmbArabaListesi.ValueMember = "ID";
+                
 
                 Metotlar.Temizle(panel1);
 
@@ -73,10 +80,19 @@ namespace RentACar.UI
 
                 db.SaveChanges();
 
+                cmbArabaListesi.DataSource = db.Arabalar.ToList();
+                cmbArabaListesi.DisplayMember = "Model";
+                cmbArabaListesi.ValueMember = "ID";
+
+                Metotlar.Temizle(panel1);
+
                 MessageBox.Show("Güncelleme başarılı.");
 
                 btnGuncelle.Enabled = false;
                 btnArabaEkle.Enabled = true;
+                btnGuncellemeYap.Enabled = true;
+                btnSil.Enabled = true;
+                cmbArabaListesi.Enabled = true;
             }
 
             
@@ -87,29 +103,14 @@ namespace RentACar.UI
             cmbArabaListesi.DataSource = db.Arabalar.ToList();
             cmbArabaListesi.DisplayMember = "Model";
             cmbArabaListesi.ValueMember = "ID";
+            cmbArabaListesi.SelectedIndex = 0;
 
             btnGuncelle.Enabled = false;
             rdoEvet.Checked = true;
-        }
-
-        private void BtnGirisVeyaGuncelle_Click(object sender, EventArgs e)
-        {
-            btnGuncelle.Enabled = true;
-            btnArabaEkle.Enabled = false;
-
-            Araba araba = db.Arabalar.Where(x => x.ID == (int)cmbArabaListesi.SelectedValue).FirstOrDefault();
-            txtSasiNo.Text = araba.SasiNo;
-            txtModel.Text = araba.Model;
-            txtMarka.Text = araba.Marka;
-            txtMesafe.Text = araba.Mesafe.ToString();
-            txtMesafeKm.Text = araba.YillikMesafe.ToString();
-            dtCikisTarihi.Value = araba.CikisTarihi;
-            if (araba.KiradaMi == true)
-                rdoEvet.Checked = true;
-
-            else rdoHayir.Checked = true;
             
         }
+
+        
 
         private void BtnSil_Click(object sender, EventArgs e)
         {
@@ -126,11 +127,40 @@ namespace RentACar.UI
             }
 
             db.SaveChanges();
+
+            cmbArabaListesi.DataSource = db.Arabalar.ToList();
+            cmbArabaListesi.DisplayMember = "Model";
+            cmbArabaListesi.ValueMember = "ID";
+
+            
         }
 
         private void ArabaIslemleri_FormClosing(object sender, FormClosingEventArgs e)
         {
             girisEkrani.Show();
         }
+
+        private void BtnGuncellemeYap_Click(object sender, EventArgs e)
+        {
+            btnGuncelle.Enabled = true;
+            btnArabaEkle.Enabled = false;
+            btnGuncellemeYap.Enabled = false;
+            cmbArabaListesi.Enabled = false;
+            btnSil.Enabled = false;
+
+            Araba araba = db.Arabalar.Where(x => x.ID == (int)cmbArabaListesi.SelectedValue).FirstOrDefault();
+            txtSasiNo.Text = araba.SasiNo;
+            txtModel.Text = araba.Model;
+            txtMarka.Text = araba.Marka;
+            txtMesafe.Text = araba.Mesafe.ToString();
+            txtMesafeKm.Text = araba.YillikMesafe.ToString();
+            dtCikisTarihi.Value = araba.CikisTarihi;
+            if (araba.KiradaMi == true)
+                rdoEvet.Checked = true;
+
+            else rdoHayir.Checked = true;
+        }
+
+        
     }
 }
