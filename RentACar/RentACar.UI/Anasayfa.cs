@@ -16,7 +16,6 @@ namespace RentACar.UI
         Context db;
         public Anasayfa(Context context)
         {
-
             db = context;
             InitializeComponent();
         }
