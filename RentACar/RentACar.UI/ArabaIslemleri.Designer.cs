@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArabaIslemleri));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbArabaListesi = new System.Windows.Forms.ComboBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnArabaEkle = new System.Windows.Forms.Button();
@@ -51,13 +52,14 @@
             this.txtModel = new System.Windows.Forms.TextBox();
             this.txtSasiNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbArabaListesi = new System.Windows.Forms.ComboBox();
+            this.btnGirisVeyaGuncelle = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbResimEkle)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnGirisVeyaGuncelle);
             this.panel1.Controls.Add(this.cmbArabaListesi);
             this.panel1.Controls.Add(this.btnSil);
             this.panel1.Controls.Add(this.btnGuncelle);
@@ -86,6 +88,14 @@
             this.panel1.Size = new System.Drawing.Size(1004, 598);
             this.panel1.TabIndex = 0;
             // 
+            // cmbArabaListesi
+            // 
+            this.cmbArabaListesi.FormattingEnabled = true;
+            this.cmbArabaListesi.Location = new System.Drawing.Point(575, 160);
+            this.cmbArabaListesi.Name = "cmbArabaListesi";
+            this.cmbArabaListesi.Size = new System.Drawing.Size(307, 24);
+            this.cmbArabaListesi.TabIndex = 18;
+            // 
             // btnSil
             // 
             this.btnSil.BackColor = System.Drawing.Color.Teal;
@@ -93,12 +103,13 @@
             this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSil.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSil.Location = new System.Drawing.Point(740, 292);
+            this.btnSil.Location = new System.Drawing.Point(672, 294);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(99, 42);
             this.btnSil.TabIndex = 17;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -107,7 +118,7 @@
             this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuncelle.ForeColor = System.Drawing.Color.Transparent;
-            this.btnGuncelle.Location = new System.Drawing.Point(605, 292);
+            this.btnGuncelle.Location = new System.Drawing.Point(175, 513);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(99, 42);
             this.btnGuncelle.TabIndex = 16;
@@ -308,14 +319,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Araba Şasi Numarası :";
             // 
-            // cmbArabaListesi
+            // btnGirisVeyaGuncelle
             // 
-            this.cmbArabaListesi.FormattingEnabled = true;
-            this.cmbArabaListesi.Location = new System.Drawing.Point(575, 138);
-            this.cmbArabaListesi.Name = "cmbArabaListesi";
-            this.cmbArabaListesi.Size = new System.Drawing.Size(307, 24);
-            this.cmbArabaListesi.TabIndex = 18;
-            this.cmbArabaListesi.SelectedIndexChanged += new System.EventHandler(this.CmbArabaListesi_SelectedIndexChanged);
+            this.btnGirisVeyaGuncelle.BackColor = System.Drawing.Color.Teal;
+            this.btnGirisVeyaGuncelle.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnGirisVeyaGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGirisVeyaGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGirisVeyaGuncelle.ForeColor = System.Drawing.Color.Transparent;
+            this.btnGirisVeyaGuncelle.Location = new System.Drawing.Point(605, 225);
+            this.btnGirisVeyaGuncelle.Name = "btnGirisVeyaGuncelle";
+            this.btnGirisVeyaGuncelle.Size = new System.Drawing.Size(234, 42);
+            this.btnGirisVeyaGuncelle.TabIndex = 19;
+            this.btnGirisVeyaGuncelle.Text = "Güncelleme Yap";
+            this.btnGirisVeyaGuncelle.UseVisualStyleBackColor = false;
+            this.btnGirisVeyaGuncelle.Click += new System.EventHandler(this.BtnGirisVeyaGuncelle_Click);
             // 
             // ArabaIslemleri
             // 
@@ -331,6 +348,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ArabaIslemleri";
             this.Text = "ArabaIslemleri";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ArabaIslemleri_FormClosing);
             this.Load += new System.EventHandler(this.ArabaIslemleri_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -364,5 +382,6 @@
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnArabaEkle;
         private System.Windows.Forms.ComboBox cmbArabaListesi;
+        private System.Windows.Forms.Button btnGirisVeyaGuncelle;
     }
 }

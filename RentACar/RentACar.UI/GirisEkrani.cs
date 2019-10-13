@@ -56,6 +56,7 @@ namespace RentACar.UI
         private void GirisEkrani_Load(object sender, EventArgs e)
         {
             db = new Context();
+            txtSifre.PasswordChar = '*';
         }
     }
 }
