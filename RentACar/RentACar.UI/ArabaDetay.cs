@@ -17,8 +17,10 @@ namespace RentACar.UI
         Anasayfa anasayfa;
         Context db;
         int arabaId;
-        public ArabaDetay(Anasayfa sayfa,Context context,int id)
+        int uyeId;
+        public ArabaDetay(Anasayfa sayfa,Context context,int id,int uye)
         {
+            uyeId = uye;
             db = context;
             anasayfa = sayfa;
             arabaId = id;
@@ -68,7 +70,7 @@ namespace RentACar.UI
 
         private void btnKirala_Click(object sender, EventArgs e)
         {
-            KiralamaEkrani kiralama = new KiralamaEkrani(this, db);
+            KiralamaEkrani kiralama = new KiralamaEkrani(this, db,uyeId);
             Hide();
             kiralama.Show();
 

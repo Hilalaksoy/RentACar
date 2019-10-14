@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KiralamaEkrani));
-            this.pnlKiralama = new System.Windows.Forms.Panel();
+            this.pnlMusteriler = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btnMusteriEkle = new System.Windows.Forms.Button();
             this.lnkResimSec = new System.Windows.Forms.LinkLabel();
@@ -46,45 +46,46 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlKiralama = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnTamamla = new System.Windows.Forms.Button();
-            this.txtIndirimliFiyat = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.txtIndirim = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnlKiralama.SuspendLayout();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblGunSayisi = new System.Windows.Forms.Label();
+            this.lblIndirim = new System.Windows.Forms.Label();
+            this.lblFiyat = new System.Windows.Forms.Label();
+            this.nmrGunSayisi = new System.Windows.Forms.NumericUpDown();
+            this.pnlMusteriler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbKimlik)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.pnlKiralama.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrGunSayisi)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlKiralama
+            // pnlMusteriler
             // 
-            this.pnlKiralama.BackColor = System.Drawing.Color.White;
-            this.pnlKiralama.Controls.Add(this.label8);
-            this.pnlKiralama.Controls.Add(this.btnMusteriEkle);
-            this.pnlKiralama.Controls.Add(this.lnkResimSec);
-            this.pnlKiralama.Controls.Add(this.pbKimlik);
-            this.pnlKiralama.Controls.Add(this.txtMemleket);
-            this.pnlKiralama.Controls.Add(this.dtDogumTarihi);
-            this.pnlKiralama.Controls.Add(this.txtSoyad);
-            this.pnlKiralama.Controls.Add(this.txtAd);
-            this.pnlKiralama.Controls.Add(this.txtTcNo);
-            this.pnlKiralama.Controls.Add(this.label7);
-            this.pnlKiralama.Controls.Add(this.label6);
-            this.pnlKiralama.Controls.Add(this.label5);
-            this.pnlKiralama.Controls.Add(this.label4);
-            this.pnlKiralama.Controls.Add(this.label3);
-            this.pnlKiralama.Controls.Add(this.label2);
-            this.pnlKiralama.Location = new System.Drawing.Point(62, 99);
-            this.pnlKiralama.Name = "pnlKiralama";
-            this.pnlKiralama.Size = new System.Drawing.Size(519, 565);
-            this.pnlKiralama.TabIndex = 0;
+            this.pnlMusteriler.BackColor = System.Drawing.Color.White;
+            this.pnlMusteriler.Controls.Add(this.label8);
+            this.pnlMusteriler.Controls.Add(this.btnMusteriEkle);
+            this.pnlMusteriler.Controls.Add(this.lnkResimSec);
+            this.pnlMusteriler.Controls.Add(this.pbKimlik);
+            this.pnlMusteriler.Controls.Add(this.txtMemleket);
+            this.pnlMusteriler.Controls.Add(this.dtDogumTarihi);
+            this.pnlMusteriler.Controls.Add(this.txtSoyad);
+            this.pnlMusteriler.Controls.Add(this.txtAd);
+            this.pnlMusteriler.Controls.Add(this.txtTcNo);
+            this.pnlMusteriler.Controls.Add(this.label7);
+            this.pnlMusteriler.Controls.Add(this.label6);
+            this.pnlMusteriler.Controls.Add(this.label5);
+            this.pnlMusteriler.Controls.Add(this.label4);
+            this.pnlMusteriler.Controls.Add(this.label3);
+            this.pnlMusteriler.Controls.Add(this.label2);
+            this.pnlMusteriler.Location = new System.Drawing.Point(62, 99);
+            this.pnlMusteriler.Name = "pnlMusteriler";
+            this.pnlMusteriler.Size = new System.Drawing.Size(519, 565);
+            this.pnlMusteriler.TabIndex = 0;
             // 
             // label8
             // 
@@ -110,6 +111,7 @@
             this.btnMusteriEkle.TabIndex = 10;
             this.btnMusteriEkle.Text = "Kaydet";
             this.btnMusteriEkle.UseVisualStyleBackColor = false;
+            this.btnMusteriEkle.Click += new System.EventHandler(this.btnMusteriEkle_Click);
             // 
             // lnkResimSec
             // 
@@ -122,6 +124,7 @@
             this.lnkResimSec.TabIndex = 9;
             this.lnkResimSec.TabStop = true;
             this.lnkResimSec.Text = "Resim Seç";
+            this.lnkResimSec.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkResimSec_LinkClicked);
             // 
             // pbKimlik
             // 
@@ -246,22 +249,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Kiralamak için Gerekli Bilgiler";
             // 
-            // panel1
+            // pnlKiralama
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.txtIndirim);
-            this.panel1.Controls.Add(this.numericUpDown1);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.btnTamamla);
-            this.panel1.Controls.Add(this.txtIndirimliFiyat);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Location = new System.Drawing.Point(652, 99);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(519, 565);
-            this.panel1.TabIndex = 11;
+            this.pnlKiralama.BackColor = System.Drawing.Color.White;
+            this.pnlKiralama.Controls.Add(this.nmrGunSayisi);
+            this.pnlKiralama.Controls.Add(this.lblFiyat);
+            this.pnlKiralama.Controls.Add(this.lblIndirim);
+            this.pnlKiralama.Controls.Add(this.lblGunSayisi);
+            this.pnlKiralama.Controls.Add(this.label10);
+            this.pnlKiralama.Controls.Add(this.pictureBox1);
+            this.pnlKiralama.Controls.Add(this.label9);
+            this.pnlKiralama.Controls.Add(this.btnTamamla);
+            this.pnlKiralama.Controls.Add(this.label12);
+            this.pnlKiralama.Controls.Add(this.label13);
+            this.pnlKiralama.Location = new System.Drawing.Point(652, 99);
+            this.pnlKiralama.Name = "pnlKiralama";
+            this.pnlKiralama.Size = new System.Drawing.Size(519, 565);
+            this.pnlKiralama.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(182, 379);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(202, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // label9
             // 
@@ -288,19 +302,12 @@
             this.btnTamamla.Text = "İşlemi Tamamla";
             this.btnTamamla.UseVisualStyleBackColor = false;
             // 
-            // txtIndirimliFiyat
-            // 
-            this.txtIndirimliFiyat.Location = new System.Drawing.Point(222, 176);
-            this.txtIndirimliFiyat.Name = "txtIndirimliFiyat";
-            this.txtIndirimliFiyat.Size = new System.Drawing.Size(162, 20);
-            this.txtIndirimliFiyat.TabIndex = 5;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label12.Location = new System.Drawing.Point(141, 226);
+            this.label12.Location = new System.Drawing.Point(141, 227);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 17);
             this.label12.TabIndex = 2;
@@ -311,46 +318,56 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label13.Location = new System.Drawing.Point(154, 176);
+            this.label13.Location = new System.Drawing.Point(154, 182);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(53, 17);
             this.label13.TabIndex = 1;
             this.label13.Text = "Fiyat :";
             // 
-            // label15
+            // label10
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label15.Location = new System.Drawing.Point(28, 107);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(318, 17);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Kaç gün için kiralamak istediğinizi seçiniz..";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label10.Location = new System.Drawing.Point(111, 138);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 17);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Gün Sayısı :";
             // 
-            // numericUpDown1
+            // lblGunSayisi
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(373, 107);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 11;
+            this.lblGunSayisi.AutoSize = true;
+            this.lblGunSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGunSayisi.Location = new System.Drawing.Point(226, 138);
+            this.lblGunSayisi.Name = "lblGunSayisi";
+            this.lblGunSayisi.Size = new System.Drawing.Size(0, 17);
+            this.lblGunSayisi.TabIndex = 15;
             // 
-            // txtIndirim
+            // lblIndirim
             // 
-            this.txtIndirim.Location = new System.Drawing.Point(222, 226);
-            this.txtIndirim.Name = "txtIndirim";
-            this.txtIndirim.Size = new System.Drawing.Size(162, 20);
-            this.txtIndirim.TabIndex = 12;
+            this.lblIndirim.AutoSize = true;
+            this.lblIndirim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIndirim.Location = new System.Drawing.Point(226, 229);
+            this.lblIndirim.Name = "lblIndirim";
+            this.lblIndirim.Size = new System.Drawing.Size(0, 17);
+            this.lblIndirim.TabIndex = 15;
             // 
-            // pictureBox1
+            // lblFiyat
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(182, 379);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.lblFiyat.AutoSize = true;
+            this.lblFiyat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiyat.Location = new System.Drawing.Point(226, 186);
+            this.lblFiyat.Name = "lblFiyat";
+            this.lblFiyat.Size = new System.Drawing.Size(0, 17);
+            this.lblFiyat.TabIndex = 16;
+            // 
+            // nmrGunSayisi
+            // 
+            this.nmrGunSayisi.Location = new System.Drawing.Point(229, 138);
+            this.nmrGunSayisi.Name = "nmrGunSayisi";
+            this.nmrGunSayisi.Size = new System.Drawing.Size(120, 20);
+            this.nmrGunSayisi.TabIndex = 17;
             // 
             // KiralamaEkrani
             // 
@@ -359,20 +376,20 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1218, 718);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlKiralama);
+            this.Controls.Add(this.pnlMusteriler);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "KiralamaEkrani";
             this.Text = "Kiralama";
+            this.pnlMusteriler.ResumeLayout(false);
+            this.pnlMusteriler.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKimlik)).EndInit();
             this.pnlKiralama.ResumeLayout(false);
             this.pnlKiralama.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbKimlik)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrGunSayisi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,7 +397,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlKiralama;
+        private System.Windows.Forms.Panel pnlMusteriler;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -397,15 +414,16 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnMusteriEkle;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlKiralama;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnTamamla;
-        private System.Windows.Forms.TextBox txtIndirimliFiyat;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtIndirim;
+        private System.Windows.Forms.Label lblFiyat;
+        private System.Windows.Forms.Label lblIndirim;
+        private System.Windows.Forms.Label lblGunSayisi;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown nmrGunSayisi;
     }
 }

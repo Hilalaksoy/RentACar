@@ -22,9 +22,7 @@ namespace RentACar.DATA
 
         public virtual List<Resim> Resimler { get; set; }  //Bire - çok
 
-        public override string ToString()
-        {
-            return Marka + " " + Model;
-        }
+
+     
     }
 }

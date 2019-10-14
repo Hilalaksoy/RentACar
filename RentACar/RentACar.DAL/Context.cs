@@ -21,6 +21,7 @@ namespace RentACar.DAL
         public DbSet<Kiralama> Kiralamalar { get; set; }
         public DbSet<Resim> Resimler { get; set; }
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UyeMapping());
@@ -28,6 +29,7 @@ namespace RentACar.DAL
             modelBuilder.Configurations.Add(new ArabaMapping());
             modelBuilder.Configurations.Add(new KiralamaMapping());
             modelBuilder.Configurations.Add(new ResimMapping());
+
 
             base.OnModelCreating(modelBuilder);
         }

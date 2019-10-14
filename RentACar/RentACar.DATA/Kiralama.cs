@@ -12,6 +12,7 @@ namespace RentACar.DATA
         public int GunSayisi { get; set; }
         public decimal Fiyat { get; set; }  //İndirimli Fiyat
         public float Indirim { get; set; }
+        public DateTime KiralamaTarihi { get; set; }
 
         public int MusteriID { get; set; }  //FK 
         public virtual Araba Araba { get; set; } // Bire -bir

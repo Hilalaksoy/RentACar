@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RentACar.DATA;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -26,7 +27,7 @@ namespace RentACar.UI
                     if ((item as ComboBox).SelectedIndex == -1)
                         return true;
                 }
-                else if(item is PictureBox && item.Name.StartsWith("pbAraba"))
+                else if(item is PictureBox)
                 {
                     if ((item as PictureBox).Tag == null)
                         return true;
@@ -44,6 +45,8 @@ namespace RentACar.UI
                 else if (item is MaskedTextBox) ((MaskedTextBox)item).ResetText();
                 else if (item is ListBox) ((ListBox)item).DataSource = null;
                 else if (item is Label && item.Name.StartsWith("lbl")) item.Text = "";
+                else if (item is PictureBox)
+                    ((PictureBox)item).Image = null;
             }
         }
 
@@ -65,7 +68,8 @@ namespace RentACar.UI
                 return Image.FromStream(ms);
             }
         }
-   
+        
+       
     }
 }
 

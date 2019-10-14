@@ -27,7 +27,7 @@ namespace RentACar.UI
             kayitEkrani.Show();
 
         }
-
+        int uyeId;
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
             Uye uye = db.Uyeler.FirstOrDefault(x => x.Email == txtEmail.Text && x.Sifre == txtSifre.Text);
@@ -40,13 +40,15 @@ namespace RentACar.UI
             {
                 if (uye.AdminMi == true)
                 {
+                 
                     ArabaIslemleri arabaIslemleri = new ArabaIslemleri(this,db);
                     this.Hide();
                     arabaIslemleri.Show();
                 }
                 else
                 {
-                    Anasayfa anasayfa = new Anasayfa(db);
+                    uyeId = uye.UyeID;
+                    Anasayfa anasayfa = new Anasayfa(db,uyeId);
                     this.Hide();
                     anasayfa.Show();
                 }
