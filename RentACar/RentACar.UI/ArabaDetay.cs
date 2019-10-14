@@ -65,5 +65,13 @@ namespace RentACar.UI
             }
           
         }
+
+        private void btnKirala_Click(object sender, EventArgs e)
+        {
+            KiralamaEkrani kiralama = new KiralamaEkrani(this, db);
+            Hide();
+            kiralama.Show();
+
+        }
     }
 }

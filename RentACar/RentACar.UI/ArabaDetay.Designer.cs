@@ -39,7 +39,7 @@
             this.lblModel = new System.Windows.Forms.Label();
             this.lblMarka = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnKirala = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,6 +75,7 @@
             // 
             // pnlArabaDetay
             // 
+            this.pnlArabaDetay.BackColor = System.Drawing.Color.White;
             this.pnlArabaDetay.Controls.Add(this.lblSasiNo);
             this.pnlArabaDetay.Controls.Add(this.lblFiyat);
             this.pnlArabaDetay.Controls.Add(this.lblMesafeKm);
@@ -83,7 +84,7 @@
             this.pnlArabaDetay.Controls.Add(this.lblModel);
             this.pnlArabaDetay.Controls.Add(this.lblMarka);
             this.pnlArabaDetay.Controls.Add(this.label7);
-            this.pnlArabaDetay.Controls.Add(this.button1);
+            this.pnlArabaDetay.Controls.Add(this.btnKirala);
             this.pnlArabaDetay.Controls.Add(this.label6);
             this.pnlArabaDetay.Controls.Add(this.label5);
             this.pnlArabaDetay.Controls.Add(this.label4);
@@ -162,19 +163,20 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "Fiyat  :";
             // 
-            // button1
+            // btnKirala
             // 
-            this.button1.BackColor = System.Drawing.Color.Firebrick;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(325, 335);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Kirala";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnKirala.BackColor = System.Drawing.Color.Firebrick;
+            this.btnKirala.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.btnKirala.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKirala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKirala.ForeColor = System.Drawing.Color.Transparent;
+            this.btnKirala.Location = new System.Drawing.Point(325, 335);
+            this.btnKirala.Name = "btnKirala";
+            this.btnKirala.Size = new System.Drawing.Size(100, 28);
+            this.btnKirala.TabIndex = 1;
+            this.btnKirala.Text = "Kirala";
+            this.btnKirala.UseVisualStyleBackColor = false;
+            this.btnKirala.Click += new System.EventHandler(this.btnKirala_Click);
             // 
             // label6
             // 
@@ -354,7 +356,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlArabaDetay;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnKirala;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

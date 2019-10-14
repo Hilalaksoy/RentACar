@@ -86,6 +86,12 @@
     <Compile Include="KayitEkrani.Designer.cs">
       <DependentUpon>KayitEkrani.cs</DependentUpon>
     </Compile>
+    <Compile Include="KiralamaEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KiralamaEkrani.Designer.cs">
+      <DependentUpon>KiralamaEkrani.cs</DependentUpon>
+    </Compile>
     <Compile Include="Metotlar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KayitEkrani.resx">
       <DependentUpon>KayitEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KiralamaEkrani.resx">
+      <DependentUpon>KiralamaEkrani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
