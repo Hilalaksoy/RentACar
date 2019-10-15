@@ -135,6 +135,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "KayitEkrani";
             this.Text = "Kayıt Ekranı";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.KayitEkrani_FormClosed);
+            this.Load += new System.EventHandler(this.KayitEkrani_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

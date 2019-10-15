@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArabaIslemleri));
             this.pnlArabaIslem = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnArabaEkle = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtFiyat = new System.Windows.Forms.TextBox();
             this.txtMesafeKm = new System.Windows.Forms.TextBox();
             this.txtMesafe = new System.Windows.Forms.TextBox();
             this.txtMarka = new System.Windows.Forms.TextBox();
@@ -63,8 +65,6 @@
             this.pbResimEkle = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtFiyat = new System.Windows.Forms.TextBox();
             this.pnlArabaIslem.SuspendLayout();
             this.pnlResimIslem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbResimKaydet)).BeginInit();
@@ -103,6 +103,17 @@
             this.pnlArabaIslem.Name = "pnlArabaIslem";
             this.pnlArabaIslem.Size = new System.Drawing.Size(507, 598);
             this.pnlArabaIslem.TabIndex = 0;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(120, 441);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(106, 20);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Günlük Fiyat :\r\n";
             // 
             // btnGuncelle
             // 
@@ -240,6 +251,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Model :\r\n";
             // 
+            // txtFiyat
+            // 
+            this.txtFiyat.Location = new System.Drawing.Point(267, 441);
+            this.txtFiyat.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFiyat.Name = "txtFiyat";
+            this.txtFiyat.Size = new System.Drawing.Size(185, 23);
+            this.txtFiyat.TabIndex = 1;
+            // 
             // txtMesafeKm
             // 
             this.txtMesafeKm.Location = new System.Drawing.Point(267, 393);
@@ -372,7 +391,7 @@
             // 
             this.pbAraba2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbAraba2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbAraba2.Location = new System.Drawing.Point(204, 107);
+            this.pbAraba2.Location = new System.Drawing.Point(39, 107);
             this.pbAraba2.Name = "pbAraba2";
             this.pbAraba2.Size = new System.Drawing.Size(118, 80);
             this.pbAraba2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -383,7 +402,7 @@
             // 
             this.pbAraba5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbAraba5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbAraba5.Location = new System.Drawing.Point(39, 319);
+            this.pbAraba5.Location = new System.Drawing.Point(197, 107);
             this.pbAraba5.Name = "pbAraba5";
             this.pbAraba5.Size = new System.Drawing.Size(118, 80);
             this.pbAraba5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -394,7 +413,7 @@
             // 
             this.pbAraba4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbAraba4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbAraba4.Location = new System.Drawing.Point(204, 217);
+            this.pbAraba4.Location = new System.Drawing.Point(39, 208);
             this.pbAraba4.Name = "pbAraba4";
             this.pbAraba4.Size = new System.Drawing.Size(118, 80);
             this.pbAraba4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -405,7 +424,7 @@
             // 
             this.pbAraba3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbAraba3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbAraba3.Location = new System.Drawing.Point(40, 217);
+            this.pbAraba3.Location = new System.Drawing.Point(197, 208);
             this.pbAraba3.Name = "pbAraba3";
             this.pbAraba3.Size = new System.Drawing.Size(118, 80);
             this.pbAraba3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -416,7 +435,7 @@
             // 
             this.pbAraba1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbAraba1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbAraba1.Location = new System.Drawing.Point(39, 108);
+            this.pbAraba1.Location = new System.Drawing.Point(39, 308);
             this.pbAraba1.Name = "pbAraba1";
             this.pbAraba1.Size = new System.Drawing.Size(118, 80);
             this.pbAraba1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -465,25 +484,6 @@
             this.label10.Size = new System.Drawing.Size(257, 17);
             this.label10.TabIndex = 21;
             this.label10.Text = "İşlem yapmak istediğiniz arabayı seçiniz";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(120, 441);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(106, 20);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "Günlük Fiyat :\r\n";
-            // 
-            // txtFiyat
-            // 
-            this.txtFiyat.Location = new System.Drawing.Point(267, 441);
-            this.txtFiyat.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFiyat.Name = "txtFiyat";
-            this.txtFiyat.Size = new System.Drawing.Size(185, 23);
-            this.txtFiyat.TabIndex = 1;
             // 
             // ArabaIslemleri
             // 

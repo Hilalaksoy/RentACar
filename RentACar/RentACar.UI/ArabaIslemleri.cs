@@ -44,33 +44,46 @@ namespace RentACar.UI
 
             else
             {
-                Araba araba = new Araba()
+                Araba araba = new Araba();
+
+                if ((txtSasiNo.Text).Length < 17 || (txtSasiNo.Text).Length > 17)
+                    MessageBox.Show("Lütfen Şasi No için 17 karakter giriniz");
+                else
                 {
-                    SasiNo = txtSasiNo.Text,
-                    Model = txtModel.Text,
-                    Marka = txtMarka.Text,
-                    CikisTarihi = dtCikisTarihi.Value,
-                    KiradaMi = rdoEvet.Checked,
-                    Mesafe = Convert.ToInt32(txtMesafe.Text),
-                    YillikMesafe = Convert.ToInt32(txtMesafeKm.Text),
-                    Fiyat = Convert.ToDecimal(txtFiyat.Text)
-                };
+                    int mesafe, mesafe2;
+                    decimal mesafe3;
+                    bool sonuc = int.TryParse(txtMesafe.Text, out mesafe);
+                    bool sonuc2 = int.TryParse(txtMesafeKm.Text, out mesafe2);
+                    bool sonuc3 = decimal.TryParse(txtFiyat.Text, out mesafe3);
+                    if (sonuc == true && sonuc2 == true && sonuc3 == true)
+                    {
+                        araba.Mesafe = Convert.ToInt32(txtMesafe.Text);
+                        araba.SasiNo = txtSasiNo.Text;
+                        araba.Model = txtModel.Text;
+                        araba.Marka = txtMarka.Text;
+                        araba.CikisTarihi = dtCikisTarihi.Value;
+                        araba.KiradaMi = rdoEvet.Checked;
+                        araba.YillikMesafe = Convert.ToInt32(txtMesafeKm.Text);
+                        araba.Fiyat = Convert.ToDecimal(txtFiyat.Text);
 
-                db.Arabalar.Add(araba);
+                        db.Arabalar.Add(araba);
 
-                db.SaveChanges();
+                        db.SaveChanges();
 
-                cmbArabaListesi.DataSource = db.Arabalar.ToList();
-                cmbArabaListesi.DisplayMember = "Model";
-                cmbArabaListesi.ValueMember = "ID";
+                        cmbArabaListesi.DataSource = db.Arabalar.ToList();
+                        cmbArabaListesi.DisplayMember = "Model";
+                        cmbArabaListesi.ValueMember = "ID";
+                        MessageBox.Show("Kayıt işlemi başarıyla gerçekleşti.");
+                    }
 
-
+                    else
+                    {
+                        MessageBox.Show("Lütfen bilgileri kontrol ediniz.");
+                    }
+                   
+                }
                 Metotlar.Temizle(pnlArabaIslem);
-
-                MessageBox.Show("Kayıt işlemi başarıyla gerçekleşti.");
             }
-
-
         }
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
@@ -108,8 +121,6 @@ namespace RentACar.UI
                 btnSil.Enabled = true;
                 cmbArabaListesi.Enabled = true;
             }
-
-
         }
 
         private void BtnSil_Click(object sender, EventArgs e)
@@ -131,8 +142,6 @@ namespace RentACar.UI
             cmbArabaListesi.DataSource = db.Arabalar.ToList();
             cmbArabaListesi.DisplayMember = "Model";
             cmbArabaListesi.ValueMember = "ID";
-
-
         }
 
         private void ArabaIslemleri_FormClosing(object sender, FormClosingEventArgs e)
@@ -157,6 +166,7 @@ namespace RentACar.UI
             txtMesafeKm.Text = araba.YillikMesafe.ToString();
             dtCikisTarihi.Value = araba.CikisTarihi;
             txtFiyat.Text = araba.Fiyat.ToString();
+
             if (araba.KiradaMi == true)
                 rdoEvet.Checked = true;
 
@@ -182,7 +192,7 @@ namespace RentACar.UI
                             ((PictureBox)item).Tag = System.IO.Path.GetExtension(ofd.FileName);
                             break;
                         }
-                        else if (((PictureBox)item).Tag != null && pnlResimIslem.Controls.IndexOf(((PictureBox)item)) == 4)
+                        else if (((PictureBox)item).Tag != null && pnlResimIslem.Controls.IndexOf(((PictureBox)item)) == 6)
                         {
                             MessageBox.Show("Maksimum 5 tane resim ekleyebilirsiniz !!");
                         }
@@ -222,8 +232,6 @@ namespace RentACar.UI
             {
                 MessageBox.Show("Lütfen seçeneklerden hangi arabayı seçiniz..");
             }
-
-
         }
     }
 }

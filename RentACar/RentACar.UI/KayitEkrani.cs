@@ -45,9 +45,16 @@ namespace RentACar.UI
             {
                 MessageBox.Show("Bu E-Mail daha önceden alınmış! Lütfen başka bir E-Mail deneyiniz.");
             }
+        }
 
-            
-            
+        private void KayitEkrani_Load(object sender, EventArgs e)
+        {
+            txtSifre.PasswordChar = '*';
+        }
+
+        private void KayitEkrani_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            girisEkrani.Show();
         }
     }
 }
