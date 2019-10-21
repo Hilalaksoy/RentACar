@@ -15,9 +15,16 @@ namespace RentACar.UI
     public partial class GirisEkrani : Form
     {
         Context db;
+        int uyeId;
         public GirisEkrani()
         {
             InitializeComponent();
+        }
+
+        private void GirisEkrani_Load(object sender, EventArgs e)
+        {
+            db = new Context();
+            txtSifre.PasswordChar = '*';
         }
 
         private void lnkKayit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -26,8 +33,7 @@ namespace RentACar.UI
             Hide();
             kayitEkrani.Show();
 
-        }
-        int uyeId;
+        }     
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
             Uye uye = db.Uyeler.FirstOrDefault(x => x.Email == txtEmail.Text && x.Sifre == txtSifre.Text);
@@ -39,8 +45,7 @@ namespace RentACar.UI
             else
             {
                 if (uye.AdminMi == true)
-                {
-                 
+                {                
                     ArabaIslemleri arabaIslemleri = new ArabaIslemleri(this,db);
                     this.Hide();
                     arabaIslemleri.Show();
@@ -55,10 +60,6 @@ namespace RentACar.UI
             }
         }
 
-        private void GirisEkrani_Load(object sender, EventArgs e)
-        {
-            db = new Context();
-            txtSifre.PasswordChar = '*';
-        }
+       
     }
 }

@@ -30,7 +30,7 @@ namespace RentACar.UI
                 Uye uye = new Uye()
                 {
                     Email = txtEmail.Text,
-                    Sifre = txtSifre.Text,
+                    Sifre = txtSifre.Text
 
                 };
                 db.Uyeler.Add(uye);

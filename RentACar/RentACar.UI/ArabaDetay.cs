@@ -27,13 +27,6 @@ namespace RentACar.UI
             InitializeComponent();
         }
 
-        private void btnGeri_Click(object sender, EventArgs e)
-        {     
-            //Listeye geri dön.
-            Hide();
-            anasayfa.Show();
-        }
-
         private void ArabaDetay_Load(object sender, EventArgs e)
         {
             Araba araba = db.Arabalar.FirstOrDefault(x => x.ID == arabaId);
@@ -71,10 +64,16 @@ namespace RentACar.UI
         private void btnKirala_Click(object sender, EventArgs e)
         {
             string sasiNo = lblSasiNo.Text;
-            KiralamaEkrani kiralama = new KiralamaEkrani(this, db, arabaId, uyeId, sasiNo);
+            KiralamaEkrani kiralama = new KiralamaEkrani(this, db, uyeId, sasiNo);
             Hide();
             kiralama.Show();
 
+        }
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            //Listeye geri dön.
+            Hide();
+            anasayfa.Show();
         }
     }
 }

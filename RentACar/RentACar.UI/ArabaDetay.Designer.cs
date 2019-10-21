@@ -335,6 +335,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlArabaDetay);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ArabaDetay";
             this.Text = "ArabaDetay";
             this.Load += new System.EventHandler(this.ArabaDetay_Load);

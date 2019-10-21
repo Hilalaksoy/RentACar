@@ -134,11 +134,11 @@ namespace RentACar.UI
             if (ds == DialogResult.Yes)
             {
                 db.Arabalar.Remove(araba);
+                db.SaveChanges();
                 MessageBox.Show("Silme işlemi başarıyla gerçekleşti");
             }
 
-            db.SaveChanges();
-
+         
             cmbArabaListesi.DataSource = db.Arabalar.ToList();
             cmbArabaListesi.DisplayMember = "Model";
             cmbArabaListesi.ValueMember = "ID";
@@ -200,38 +200,43 @@ namespace RentACar.UI
                 }
             }
         }
+
+
         // async - await  --> İşlemleri bir kerede yapmayı sağlar.
+        //Asenkron çalışma prensibi , yürütülen süreçlerin uzun sürmesinden dolayı , yürütülmesi gereken diğer süreçlerin beklemeden çalışmasına devam edilmesini sağlar.
         private async void pbResimKaydet_Click(object sender, EventArgs e)
         {
             //DONE:
             //cmb seçilmediyse uyarı versin.
-
-            if (cmbArabaListesi.SelectedIndex != -1)
-            {
-                Araba araba = db.Arabalar.Where(x => x.ID == (int)cmbArabaListesi.SelectedValue).FirstOrDefault();
-
-                foreach (Control item in pnlResimIslem.Controls)
+                if (cmbArabaListesi.SelectedIndex != -1)
                 {
-                    if (item is PictureBox && item.Name.StartsWith("pbAraba"))
+                    Araba araba = db.Arabalar.Where(x => x.ID == (int)cmbArabaListesi.SelectedValue).FirstOrDefault();
+
+                    foreach (Control item in pnlResimIslem.Controls)
                     {
-                        if (((PictureBox)item).Tag != null)
+                        if (item is PictureBox && item.Name.StartsWith("pbAraba"))
                         {
-                            Resim resim1 = new Resim()
+                            if (((PictureBox)item).Tag != null)
                             {
-                                Fotograf = Metotlar.ConvertImageToByte(((PictureBox)item).Image),
-                                ID = araba.ID,
-                            };
-                            db.Resimler.Add(resim1);
+                                Resim resim1 = new Resim()
+                                {
+                                    Fotograf = Metotlar.ConvertImageToByte(((PictureBox)item).Image),
+                                    ID = araba.ID,
+                                };
+                                db.Resimler.Add(resim1);
+                            }
                         }
                     }
+                    await db.SaveChangesAsync();
+                    MessageBox.Show("Resimler başarılı bir şekilde kaydedildi.", "Mesaj Bilgisi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Metotlar.Temizle2(pnlResimIslem);
                 }
-                await db.SaveChangesAsync();
-                MessageBox.Show("Resimler başarılı bir şekilde kaydedildi.", "Mesaj Bilgisi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Lütfen seçeneklerden hangi arabayı seçiniz..");
-            }
+                else
+                {
+                    MessageBox.Show("Lütfen seçeneklerden hangi araba için resim ekleneceğini seçiniz..");
+                }
+            
+           
         }
     }
 }

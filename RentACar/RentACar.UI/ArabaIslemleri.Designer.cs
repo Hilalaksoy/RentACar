@@ -374,6 +374,7 @@
             this.pbResimKaydet.Size = new System.Drawing.Size(39, 29);
             this.pbResimKaydet.TabIndex = 20;
             this.pbResimKaydet.TabStop = false;
+            this.pbResimKaydet.Tag = "save";
             this.pbResimKaydet.Click += new System.EventHandler(this.pbResimKaydet_Click);
             // 
             // label12
@@ -463,6 +464,7 @@
             this.pbResimEkle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbResimEkle.TabIndex = 16;
             this.pbResimEkle.TabStop = false;
+            this.pbResimEkle.Tag = "add";
             this.pbResimEkle.Click += new System.EventHandler(this.pbResimEkle_Click);
             // 
             // label9

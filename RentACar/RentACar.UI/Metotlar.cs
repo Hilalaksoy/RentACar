@@ -50,9 +50,20 @@ namespace RentACar.UI
             }
         }
 
+        public static void Temizle2(Panel pnl)
+        {
+            //Resim ekleme için.
+            foreach (Control item in pnl.Controls)
+            {               
+               if (item is PictureBox && ((PictureBox)item).Name.StartsWith("pbA"))
+                    ((PictureBox)item).Image = null;
+            }
+        }
+
         public static byte[] ConvertImageToByte(Image img)
         {
             //Dışarıdan gelen image tipindeki veriyi byte[] dönüştürür.
+            //geçiçi olarak veri saklama.
             using (MemoryStream ms = new MemoryStream())
             {
                 img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);

@@ -41,8 +41,7 @@ namespace RentACar.UI
             {
                 DataGridViewRow satir = dgvArabaListesi.SelectedRows[0];
                 if (satir != null)
-                {
-                    
+                {                    
                     secilenId = Convert.ToInt32(satir.Cells[0].Value);
                     ArabaDetay arabaDetay = new ArabaDetay(this, db, secilenId,uyeId);
                     Hide();

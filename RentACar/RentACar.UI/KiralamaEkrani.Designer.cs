@@ -57,6 +57,7 @@
             this.btnTamamla = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnDetayGeri = new System.Windows.Forms.Button();
             this.pnlMusteriler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbKimlik)).BeginInit();
             this.pnlKiralama.SuspendLayout();
@@ -82,7 +83,7 @@
             this.pnlMusteriler.Controls.Add(this.label4);
             this.pnlMusteriler.Controls.Add(this.label3);
             this.pnlMusteriler.Controls.Add(this.label2);
-            this.pnlMusteriler.Location = new System.Drawing.Point(62, 99);
+            this.pnlMusteriler.Location = new System.Drawing.Point(62, 87);
             this.pnlMusteriler.Name = "pnlMusteriler";
             this.pnlMusteriler.Size = new System.Drawing.Size(519, 565);
             this.pnlMusteriler.TabIndex = 0;
@@ -262,7 +263,7 @@
             this.pnlKiralama.Controls.Add(this.btnTamamla);
             this.pnlKiralama.Controls.Add(this.label12);
             this.pnlKiralama.Controls.Add(this.label13);
-            this.pnlKiralama.Location = new System.Drawing.Point(652, 99);
+            this.pnlKiralama.Location = new System.Drawing.Point(652, 86);
             this.pnlKiralama.Name = "pnlKiralama";
             this.pnlKiralama.Size = new System.Drawing.Size(519, 565);
             this.pnlKiralama.TabIndex = 11;
@@ -386,13 +387,29 @@
             this.label13.TabIndex = 1;
             this.label13.Text = "Fiyat :";
             // 
+            // btnDetayGeri
+            // 
+            this.btnDetayGeri.BackColor = System.Drawing.Color.Firebrick;
+            this.btnDetayGeri.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.btnDetayGeri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetayGeri.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetayGeri.ForeColor = System.Drawing.Color.Transparent;
+            this.btnDetayGeri.Location = new System.Drawing.Point(62, 669);
+            this.btnDetayGeri.Name = "btnDetayGeri";
+            this.btnDetayGeri.Size = new System.Drawing.Size(145, 28);
+            this.btnDetayGeri.TabIndex = 12;
+            this.btnDetayGeri.Text = " Geri Dön";
+            this.btnDetayGeri.UseVisualStyleBackColor = false;
+            this.btnDetayGeri.Click += new System.EventHandler(this.btnDetayGeri_Click);
+            // 
             // KiralamaEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1218, 718);
+            this.ClientSize = new System.Drawing.Size(1236, 722);
+            this.Controls.Add(this.btnDetayGeri);
             this.Controls.Add(this.pnlKiralama);
             this.Controls.Add(this.pnlMusteriler);
             this.Controls.Add(this.label1);
@@ -443,5 +460,6 @@
         private System.Windows.Forms.Label lblGunSayisi;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown nmrGunSayisi;
+        private System.Windows.Forms.Button btnDetayGeri;
     }
 }

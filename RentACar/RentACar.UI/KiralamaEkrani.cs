@@ -16,19 +16,21 @@ namespace RentACar.UI
     {
         ArabaDetay arabaDetay;
         Context db;
-        int uyeId,secilenId;
+        int uyeId;
         string sasiNo;
         
-        public KiralamaEkrani(ArabaDetay araba, Context context , int gelenId, int uye, string gelenSasiNo)
+        public KiralamaEkrani(ArabaDetay araba, Context context , int uye, string gelenSasiNo)
         {
             sasiNo = gelenSasiNo;
             uyeId = uye;
             arabaDetay = araba;
-            db = context;
-            secilenId = gelenId; 
+            db = context;         
             InitializeComponent();
         }
-
+        private void KiralamaEkrani_Load(object sender, EventArgs e)
+        {
+            btnTamamla.Enabled = false;
+        }
         private void btnMusteriEkle_Click(object sender, EventArgs e)
         {
             if (Metotlar.BosAlanVarMi(pnlMusteriler))
@@ -40,7 +42,6 @@ namespace RentACar.UI
 
                 if ((txtTcNo.Text).Length < 11 || (txtTcNo.Text).Length > 11)
                     MessageBox.Show("Lütfen TC No için 11 karakter giriniz");
-
                 else
                 {
                     Musteri musteri = new Musteri()
@@ -51,8 +52,7 @@ namespace RentACar.UI
                         DogumTarihi = dtDogumTarihi.Value.Date,
                         Memleket = txtMemleket.Text,
                         NufusResim = Metotlar.ConvertImageToByte(pbKimlik.Image),
-                        UyeID = uyeId
-
+                        UyeID = uyeId  //fk
                     };
                     db.Musteriler.Add(musteri);
                     db.SaveChanges();
@@ -61,12 +61,8 @@ namespace RentACar.UI
                     Metotlar.Temizle(pnlMusteriler);
                     btnTamamla.Enabled = true;
                 }
-
-                
-            }
-            
+            }   
         }
-
         private void lnkResimSec_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -82,34 +78,6 @@ namespace RentACar.UI
             else
                 pbKimlik.Tag = null;
         }
-
-        private void BtnTamamla_Click(object sender, EventArgs e)
-        {
-
-            Araba araba2 = db.Arabalar.FirstOrDefault(x => x.SasiNo == sasiNo);
-            int id = araba2.ID;
-
-            Kiralama kiralama = new Kiralama();
-            kiralama.GunSayisi = Convert.ToInt32(nmrGunSayisi.Value);
-            kiralama.Fiyat = Convert.ToDecimal(lblFiyat.Text);
-            kiralama.Indirim = lblIndirim.Text;
-            kiralama.MusteriID = uyeId;
-            kiralama.ID = id;
-
-   
-            Araba araba = db.Arabalar.FirstOrDefault(x => x.SasiNo == sasiNo);
-            araba.KiradaMi = true;
-            db.Kiralamalar.Add(kiralama);
-            db.SaveChanges();
-
-            MessageBox.Show("Kiralama işlemi başarılı");
-        }
-
-        private void KiralamaEkrani_Load(object sender, EventArgs e)
-        {
-            btnTamamla.Enabled = false;
-        }
-
         private void NmrGunSayisi_ValueChanged(object sender, EventArgs e)
         {
             if (nmrGunSayisi.Value < 7)
@@ -139,9 +107,36 @@ namespace RentACar.UI
                 int sonIndirim = indirimliFiyat + (kalanGun * indirimsizFiyat);
                 lblFiyat.Text = sonIndirim.ToString();
                 lblIndirim.Text = "%40";
-            }
+            }   
+        }
+        private void btnDetayGeri_Click(object sender, EventArgs e)
+        {
+            Hide();
+            arabaDetay.Show();
+        }
+        private void BtnTamamla_Click(object sender, EventArgs e)
+        {
 
-           
+            Araba araba2 = db.Arabalar.FirstOrDefault(x => x.SasiNo == sasiNo);
+            int id = araba2.ID;
+
+            Kiralama kiralama = new Kiralama();
+            kiralama.GunSayisi = Convert.ToInt32(nmrGunSayisi.Value);
+            kiralama.Fiyat = Convert.ToDecimal(lblFiyat.Text);
+            kiralama.Indirim = lblIndirim.Text;
+            kiralama.MusteriID = uyeId;
+            kiralama.ID = id;
+
+
+            Araba araba = db.Arabalar.FirstOrDefault(x => x.SasiNo == sasiNo);
+            araba.KiradaMi = true;
+            db.Kiralamalar.Add(kiralama);
+            db.SaveChanges();
+
+            MessageBox.Show("Kiralama işlemi başarılı bir şekilde gerçekleşti.");
+
+            this.Close();
+
         }
     }
 }
